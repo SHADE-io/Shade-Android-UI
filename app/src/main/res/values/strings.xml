@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">SHADE</string>
+
+    <string name="logo_name">shade</string>
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
+
+    <string-array name="drawer">
+        <item>Chat with Us</item>
+        <item>Sensor</item>
+        <item>Notifications</item>
+        <item>Change Password</item>
+        <item>Legal Information</item>
+        <item>Help</item>
+        <item>Sign Out</item>
+    </string-array>
+
+    <array name="drawerIcons">
+        <item>@drawable/battery_charging</item>
+        <item>@drawable/battery_charging</item>
+        <item>@drawable/battery_charging</item>
+        <item>@drawable/battery_charging</item>
+        <item>@drawable/battery_charging</item>
+        <item>@drawable/battery_charging</item>
+        <item>@drawable/battery_charging</item>
+    </array>
+
+
+    <!-- Font -->
+    <string name="roboto_light">fonts/Roboto-Light.ttf</string>
+    <string name="roboto_bold">fonts/Roboto-Bold.ttf</string>
+    <string name="roboto_medium">fonts/Roboto-Medium.ttf</string>
+    <string name="roboto_regular">fonts/Roboto-Regular.ttf</string>
+    <!-- End of Font -->
+
+    <!-- Splash Screen-->
+    <string name="splash_bottom_title">You need a Shade sensor to use this app.\nDon\'t have one? Tap here.</string>
+    <string name="splash_btn_signUp">SIGN UP</string>
+    <string name="splash_btn_signIn">SIGN IN</string>
+
+    <!-- Splash Screen-->
+    <string name="signIn_edt_hint_email">Email</string>
+    <string name="signIn_edt_hint_password">Password</string>
+    <string name="signIn_txt_forgotPassword">Forgot password?</string>
+    <string name="signIn_txt_email_support">Email Customer Support</string>
+    <string name="signIn_txt_or">or</string>
+    <string name="signIn_txt_all_support">Call Us</string>
+
+    <!-- Sign Up Screen-->
+    <string name="signUp_terms_cnd">By creating an account, you agree to the Terms of Service.</string>
+
+    <!-- Splash Screen-->
+    <string name="forgotPsw_txt">We\'ll email you a link with instructions to reset your password. Please enter the email you use to sign in.</string>
+    <string name="forgotPsw_btn">SUBMIT</string>
+    <string name="forgotPsw_title">Reset Password</string>
+
+</resources>

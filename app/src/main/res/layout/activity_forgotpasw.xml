@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white_1000">
+
+    <RelativeLayout
+        android:id="@+id/include_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <include
+            layout="@layout/include_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_two"
+        android:layout_below="@+id/include_topbar"
+        android:background="@drawable/dropshadow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/include_topbar"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_twelve"
+            android:layout_marginRight="@dimen/dp_twelve"
+            android:layout_marginTop="@dimen/dp_twenttfive"
+            android:gravity="left"
+            android:text="@string/forgotPsw_txt"
+            android:textColor="@color/textColor_signin_tiitle"
+            android:textSize="@dimen/sp_smallx"
+            shade:customFont="@string/roboto_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_eight"
+            android:paddingRight="@dimen/dp_eight">
+
+            <com.shades.shade.widgets.ShadeEditText
+                android:id="@+id/forgotPws_edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signIn_edt_hint_email"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor_hint"
+                android:theme="@style/EditTextStyle"
+                shade:customFont="@string/roboto_regular" />
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:id="@+id/forgotPws_error_email_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="left"
+                android:paddingLeft="@dimen/dp_two"
+                android:paddingTop="-2dp"
+                android:text="@string/signIn_txt_forgotPassword"
+                android:textColor="@color/highlightedColor"
+                android:textSize="@dimen/sp_smallxx"
+                android:visibility="invisible"
+                shade:customFont="@string/roboto_regular" />
+        </LinearLayout>
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/forgotPws_btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_twenttfive"
+            android:background="@drawable/button_fill_large"
+            android:gravity="center"
+            android:text="@string/forgotPsw_btn"
+            android:textColor="@color/md_white_1000"
+            android:textSize="@dimen/sp_mediumx"
+            shade:customFont="@string/roboto_medium" />
+
+
+    </LinearLayout>
+</RelativeLayout>

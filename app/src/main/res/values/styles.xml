@@ -1,0 +1,50 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>​
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorSwitchThumbNormal">@color/colorAccent</item>
+        <item name="android:colorForeground">@color/colorAccent</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/colorAccent</item>
+
+        <!-- Navigation Drawer Arrow Style. -->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!-- PopupMenu -->
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">#4A4A4A</item>
+    </style>
+
+
+    <!-- CustomVIew -->
+    <declare-styleable name="ViewStyle">
+        <attr name="customFont" format="string" />
+    </declare-styleable>
+
+
+    <!-- PopupMenu -->
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">@android:color/white</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/sp_smallxx</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">#CECECE</item>
+        <item name="colorControlActivated">#FB6463</item>
+        <item name="colorControlHighlight">#FB6463</item>
+        <item name="android:paddingTop">@dimen/dp_twelve</item>
+        <item name="android:paddingBottom">@dimen/dp_twelve</item>
+    </style>
+
+
+</resources>

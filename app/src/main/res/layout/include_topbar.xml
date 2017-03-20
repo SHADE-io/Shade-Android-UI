@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/md_white_1000"
+        android:elevation="@dimen/dp_five"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/topBar_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_ten"
+            android:scaleType="centerInside"
+            android:src="@drawable/arrow_back" />
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/topBar_txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_fifteen"
+            android:text="@string/splash_btn_signIn"
+            android:textColor="@color/textColor_signin_tiitle"
+            android:textSize="@dimen/sp_mediumx"
+            shade:customFont="@string/roboto_medium" />
+    </LinearLayout>
+</LinearLayout>
