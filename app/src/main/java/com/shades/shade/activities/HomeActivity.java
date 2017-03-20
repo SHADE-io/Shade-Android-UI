@@ -3,12 +3,10 @@ package com.shades.shade.activities;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -28,7 +26,6 @@ import com.shades.shade.fragments.FragmentDashboard;
 import com.shades.shade.fragments.FragmentHistory;
 import com.shades.shade.model.DrawerItem;
 import com.shades.shade.widgets.PagerSlidingTabStrip;
-import com.shades.shade.widgets.SlidingTabLayout;
 
 import java.util.ArrayList;
 
@@ -239,16 +236,16 @@ public class HomeActivity extends ShadeBaseActivity {
 
 
     private ViewPager pager;
-    private SlidingTabLayout tabs;
+    private PagerSlidingTabStrip tabs;
     private final String[] TITLES = {"DASHBOARD", "HISTORY", "CHECK IN"};
 
     private void loadTabPager() {
-        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         pager = (ViewPager) findViewById(R.id.pager);
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
+        tabs.setDrawBox(false);
         tabs.setViewPager(pager);
-        tabs.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
     }
 
 

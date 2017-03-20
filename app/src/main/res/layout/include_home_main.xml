@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.shades.shade.widgets.SlidingTabLayout
+    <com.shades.shade.widgets.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_forty"
         android:background="@color/md_white_1000"
-        android:clipToPadding="false" />
+        android:clipToPadding="false"
+        shade:pstsIndicatorColor="@color/colorAccent"
+        shade:pstsTabsColoumnCount="3"
+        shade:pstsTextColorSelected="@color/textColor" />
 
     <RelativeLayout
         android:layout_width="match_parent"
