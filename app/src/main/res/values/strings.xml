@@ -59,8 +59,7 @@
     <string name="frag_dashboard_Realtime_Measurement">Realtime Measurement</string>
     <string name="frag_dashboard_view_history_btn">VIEW HISTORY</string>
     <string name="frag_dashboard_view_history_dsc">You can now adjust your daily limit\nfor UV exposure from History.</string>
-
-
-
+    <string name="frag_dashboard_reached">YOU HAVE REACHED</string>
+    <string name="frag_dashboard_off_limit">OF YOUR DAILY LIMIT</string>
 
 </resources>

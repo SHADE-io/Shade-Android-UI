@@ -22,11 +22,13 @@
             <RelativeLayout
                 android:id="@+id/frg_sensor_statusLayout"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="@dimen/dp_ten"
-                android:background="@color/md_white_1000">
+                android:background="@color/md_white_1000"
+                android:padding="@dimen/dp_twelve">
 
                 <!--<include layout="@layout/inflate_dashboard_viewhistory" />-->
+                <include layout="@layout/inflate_dashboard_dailylimit" />
 
             </RelativeLayout>
 
