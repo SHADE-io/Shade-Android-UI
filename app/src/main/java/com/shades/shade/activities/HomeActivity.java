@@ -130,108 +130,11 @@ public class HomeActivity extends ShadeBaseActivity {
         final String[] drawerTitles = getResources().getStringArray(R.array.drawer);
         final TypedArray drawerIcons = getResources().obtainTypedArray(R.array.drawerIcons);
         for (int i = 0; i < drawerTitles.length; i++) {
-            drawerItems.add(new DrawerItem(drawerTitles[i], drawerIcons.getDrawable(i)));
+            drawerItems.add(new DrawerItem(drawerTitles[i], drawerIcons.getDrawable(i), false));
         }
         drawerIcons.recycle();
         adapterDrawer = new DrawerAdapter(context, drawerItems);
         recyclerViewDrawer.setAdapter(adapterDrawer);
-
-//        recyclerViewDrawer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-//            @Override
-//            public void onGlobalLayout() {
-//
-//                for (int i = 0; i < drawerTitles.length; i++) {
-//                    if (i == sharedPreferences.getInt("FRAGMENT", 0)) {
-//                        ImageView imageViewDrawerIcon = (ImageView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.imageViewDrawerIcon);
-//                        TextView textViewDrawerTitle = (TextView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.textViewDrawerItemTitle);
-//                        imageViewDrawerIcon.setColorFilter(color);
-//                        if (Build.VERSION.SDK_INT > 15) {
-//                            imageViewDrawerIcon.setImageAlpha(255);
-//                        } else {
-//                            imageViewDrawerIcon.setAlpha(255);
-//                        }
-//                        textViewDrawerTitle.setTextColor(color);
-//                        RelativeLayout relativeLayoutDrawerItem = (RelativeLayout) recyclerViewDrawer.getChildAt(i).findViewById(R.id.relativeLayoutDrawerItem);
-//                        TypedValue typedValueDrawerSelected = new TypedValue();
-//                        getTheme().resolveAttribute(R.attr.colorPrimary, typedValueDrawerSelected, true);
-//                        int colorDrawerItemSelected = typedValueDrawerSelected.data;
-//                        colorDrawerItemSelected = (colorDrawerItemSelected & 0x00FFFFFF) | 0x30000000;
-//                        relativeLayoutDrawerItem.setBackgroundColor(colorDrawerItemSelected);
-//
-//                    } else {
-//                        ImageView imageViewDrawerIcon = (ImageView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.imageViewDrawerIcon);
-//                        TextView textViewDrawerTitle = (TextView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.textViewDrawerItemTitle);
-//                        imageViewDrawerIcon.setColorFilter(getResources().getColor(R.color.md_text));
-//                        if (Build.VERSION.SDK_INT > 15) {
-//                            imageViewDrawerIcon.setImageAlpha(138);
-//                        } else {
-//                            imageViewDrawerIcon.setAlpha(138);
-//                        }
-//                        textViewDrawerTitle.setTextColor(getResources().getColor(R.color.md_text));
-//                        RelativeLayout relativeLayoutDrawerItem = (RelativeLayout) recyclerViewDrawer.getChildAt(i).findViewById(R.id.relativeLayoutDrawerItem);
-//                        relativeLayoutDrawerItem.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
-//                    }
-//                }
-//
-//                // unregister listener (this is important)
-//                recyclerViewDrawer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-//            }
-//        });
-//
-//
-//        // RecyclerView item listener.
-//        ItemClickSupport itemClickSupport = ItemClickSupport.addTo(recyclerViewDrawer);
-//        itemClickSupport.setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(RecyclerView parent, View view, final int position, long id) {
-//
-//                for (int i = 0; i < drawerTitles.length; i++) {
-//                    if (i == position) {
-//                        ImageView imageViewDrawerIcon = (ImageView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.imageViewDrawerIcon);
-//                        TextView textViewDrawerTitle = (TextView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.textViewDrawerItemTitle);
-//                        imageViewDrawerIcon.setColorFilter(color);
-//                        if (Build.VERSION.SDK_INT > 15) {
-//                            imageViewDrawerIcon.setImageAlpha(255);
-//                        } else {
-//                            imageViewDrawerIcon.setAlpha(255);
-//                        }
-//                        textViewDrawerTitle.setTextColor(color);
-//                        RelativeLayout relativeLayoutDrawerItem = (RelativeLayout) recyclerViewDrawer.getChildAt(i).findViewById(R.id.relativeLayoutDrawerItem);
-//                        TypedValue typedValueDrawerSelected = new TypedValue();
-//                        getTheme().resolveAttribute(R.attr.colorPrimary, typedValueDrawerSelected, true);
-//                        int colorDrawerItemSelected = typedValueDrawerSelected.data;
-//                        colorDrawerItemSelected = (colorDrawerItemSelected & 0x00FFFFFF) | 0x30000000;
-//                        relativeLayoutDrawerItem.setBackgroundColor(colorDrawerItemSelected);
-//
-//                    } else {
-//                        ImageView imageViewDrawerIcon = (ImageView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.imageViewDrawerIcon);
-//                        TextView textViewDrawerTitle = (TextView) recyclerViewDrawer.getChildAt(i).findViewById(R.id.textViewDrawerItemTitle);
-//                        imageViewDrawerIcon.setColorFilter(getResources().getColor(R.color.md_text));
-//                        if (Build.VERSION.SDK_INT > 15) {
-//                            imageViewDrawerIcon.setImageAlpha(138);
-//                        } else {
-//                            imageViewDrawerIcon.setAlpha(138);
-//                        }
-//                        textViewDrawerTitle.setTextColor(getResources().getColor(R.color.md_text));
-//                        RelativeLayout relativeLayoutDrawerItem = (RelativeLayout) recyclerViewDrawer.getChildAt(i).findViewById(R.id.relativeLayoutDrawerItem);
-//                        relativeLayoutDrawerItem.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
-//                    }
-//                }
-//
-//                final Handler handler = new Handler();
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        // Do something after some time
-//                        setFragment(position);
-//                        if (isExpand) {
-//                            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-//                        }
-//                    }
-//                }, 250);
-//                mDrawerLayout.closeDrawers();
-//            }
-//        });
     }
 
 

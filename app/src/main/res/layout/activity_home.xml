@@ -17,7 +17,6 @@
             android:id="@+id/toolbar"
             layout="@layout/include_topbar_toolbar" />
         <include
-            android:id="@+id/toolbar"
             layout="@layout/include_home_main" />
 
     </LinearLayout>

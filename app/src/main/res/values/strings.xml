@@ -16,13 +16,13 @@
     </string-array>
 
     <array name="drawerIcons">
-        <item>@drawable/battery_charging</item>
-        <item>@drawable/battery_charging</item>
-        <item>@drawable/battery_charging</item>
-        <item>@drawable/battery_charging</item>
-        <item>@drawable/battery_charging</item>
-        <item>@drawable/battery_charging</item>
-        <item>@drawable/battery_charging</item>
+        <item>@drawable/ic_sms_black_24dp</item>
+        <item>@drawable/ic_lens_black_24dp</item>
+        <item>@drawable/ic_notifications_black_24dp</item>
+        <item>@drawable/ic_https_black_24dp</item>
+        <item>@drawable/ic_error_black_24dp</item>
+        <item>@drawable/ic_question_answer_black_24dp</item>
+        <item>@drawable/ic_account_circle_black_24dp</item>
     </array>
 
 
