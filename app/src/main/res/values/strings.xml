@@ -64,5 +64,8 @@
     <string name="frag_dashboard_sensor_notdetecting">Your sensor is not detecting\nany UV right now.</string>
     <string name="frag_dashboard_bluetooth_off">Looks like your phone’s Bluetooth is \nturned off. Enable it to connect to your \nsensor. Need Help? Chat with us.</string>
     <string name="frag_dashboard_sensor_troubleDetecting">Trouble detecting your sensor. Please \nmake sure it is near your phone and \ncharged. Need Help? Chat with us.</string>
+    <string name="frag_dashboard_sensor_pair_sensordsc">Get started by pairing your Shade sensor \nwith the app.</string>
+    <string name="frag_dashboard_sensor_pair_sensor_btn">PAIR SENSOR</string>
+    <string name="frag_dashboard_sensor_wearShade">Wear Shade for at least one week \nbefore setting your Daily Limit for UV \nexposure. Once set, you will see \ninformation about your Daily Limit here.</string>
 
 </resources>

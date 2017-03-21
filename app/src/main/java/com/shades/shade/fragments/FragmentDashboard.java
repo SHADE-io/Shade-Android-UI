@@ -21,7 +21,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private static Context context;
 
     private enum SensorSection {
-        VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING
+        VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING, PAIR_SENSOR, WEAR_SHADE
     }
 
     private RelativeLayout relativeLayout;
@@ -44,10 +44,6 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.frg_txt_viewHistory:
-                break;
-            case R.id.img_rightArrow:
-                break;
         }
     }
 
@@ -65,7 +61,9 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 //        setLayoutFor(SensorSection.DAILY_LIMIT);
 //        setLayoutFor(SensorSection.SENSOR_NOT_DETECTING);
 //        setLayoutFor(SensorSection.BLUETOOTH_OFF);
-        setLayoutFor(SensorSection.TROUBLE_DETECTING);
+//        setLayoutFor(SensorSection.TROUBLE_DETECTING);
+//        setLayoutFor(SensorSection.PAIR_SENSOR);
+        setLayoutFor(SensorSection.WEAR_SHADE);
         showUVIndex(5.3f);
     }
 
@@ -94,7 +92,13 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
                 loadTroubleDetecting();
                 break;
 
+            case PAIR_SENSOR:
+                loadPairSensor();
+                break;
 
+            case WEAR_SHADE:
+                loadWearShade();
+                break;
         }
     }
 
@@ -120,9 +124,33 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private void loadViewHistory() {
         View view = inflater.inflate(R.layout.inflate_dashboard_viewhistory, null);
         view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-        ((ShadeTextView) view.findViewById(R.id.frg_txt_viewHistory)).setOnClickListener(this);
+        ((ShadeTextView) view.findViewById(R.id.frg_txt_viewHistory)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         relativeLayout.addView(view);
     }
+
+    /**
+     * Pair Sensor
+     */
+    private void loadPairSensor() {
+        View view = inflater.inflate(R.layout.inflate_dashboard_viewhistory, null);
+        view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+        ((ShadeTextView) view.findViewById(R.id.frg_txt_viewHistoryDsc)).setText(context.getString(R.string.frag_dashboard_sensor_pair_sensordsc));
+        ShadeTextView btnPairSensor = (ShadeTextView) view.findViewById(R.id.frg_txt_viewHistory);
+        btnPairSensor.setText(context.getString(R.string.frag_dashboard_sensor_pair_sensor_btn));
+        btnPairSensor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        relativeLayout.addView(view);
+    }
+
 
     /**
      * Load View Daily Limit Layout
@@ -131,8 +159,13 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         try {
             View view = inflater.inflate(R.layout.inflate_dashboard_dailylimit, null);
             view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-            ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(this);
             ((ShadeTextView) view.findViewById(R.id.frg_txt_currentLimit)).setText("" + value);
+            ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
             relativeLayout.addView(view);
         } catch (Exception e) {
             e.printStackTrace();
@@ -145,7 +178,12 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private void loadSensorDetecting() {
         View view = inflater.inflate(R.layout.inflate_dashboard_sensor_notdetecting, null);
         view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-        ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(this);
+        ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         relativeLayout.addView(view);
     }
 
@@ -155,7 +193,12 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private void loadBluetoothOff() {
         View view = inflater.inflate(R.layout.inflate_dashboard_bluetooth_off, null);
         view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-        ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(this);
+        ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         relativeLayout.addView(view);
     }
 
@@ -167,11 +210,29 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             View view = inflater.inflate(R.layout.inflate_dashboard_bluetooth_off, null);
             view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
             ((ShadeTextView) view.findViewById(R.id.frg_txt_Dsc)).setText(context.getString(R.string.frag_dashboard_sensor_troubleDetecting));
-            ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(this);
+            ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
             relativeLayout.addView(view);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    private void loadWearShade() {
+        try {
+            View view = inflater.inflate(R.layout.inflate_dashboard_bluetooth_off, null);
+            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+            ((ShadeTextView) view.findViewById(R.id.frg_txt_Dsc)).setText(context.getString(R.string.frag_dashboard_sensor_wearShade));
+            ((ImageView) view.findViewById(R.id.img_rightArrow)).setVisibility(View.INVISIBLE);
+            relativeLayout.addView(view);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
