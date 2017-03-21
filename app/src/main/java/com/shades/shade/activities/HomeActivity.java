@@ -26,6 +26,7 @@ import com.shades.shade.fragments.FragmentDashboard;
 import com.shades.shade.fragments.FragmentHistory;
 import com.shades.shade.model.DrawerItem;
 import com.shades.shade.widgets.PagerSlidingTabStrip;
+import com.shades.shade.widgets.ShadeTextView;
 
 import java.util.ArrayList;
 
@@ -38,6 +39,7 @@ public class HomeActivity extends ShadeBaseActivity {
 
     private RecyclerView recyclerViewDrawer;
     private RecyclerView.Adapter adapterDrawer;
+    private ShadeTextView userEmail;
 
 
     @Override
@@ -92,6 +94,7 @@ public class HomeActivity extends ShadeBaseActivity {
     public void navigationDrawer() {
         // Cast drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        userEmail = (ShadeTextView) findViewById(R.id.user_email);
 
         // Fix right margin to 56dp (portrait)
         View drawer = findViewById(R.id.drawerMenuPanel);

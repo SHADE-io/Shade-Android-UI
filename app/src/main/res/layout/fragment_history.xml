@@ -1,6 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <!-- Sensor Status Section -->
+            <RelativeLayout
+                android:id="@+id/frg_sensor_statusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_two"
+                android:layout_below="@+id/tool_bar"
+                android:background="@drawable/dropshadow" />
+
+            <!-- UV Index Section -->
+            <RelativeLayout
+                android:id="@+id/frg_uvIndexLayout"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000"
+                android:padding="@dimen/dp_ten">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_dashboard_uvIndex_title"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sp_mediumxx"
+                            shade:customFont="@string/roboto_regular" />
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_dashboard_Realtime_Measurement"
+                            android:textColor="#48168C"
+                            android:textSize="@dimen/sp_mediumx"
+                            shade:customFont="@string/roboto_regular" />
+                    </LinearLayout>
+
+                    <com.shades.shade.widgets.ShadeTextView
+                        android:id="@+id/frg_txt_UVIndex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:singleLine="true"
+                        android:text="0.00"
+                        android:textColor="#C7C7CC"
+                        android:textSize="@dimen/sp_largexx"
+                        shade:customFont="@string/roboto_regular" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_two"
+                android:layout_below="@+id/tool_bar"
+                android:background="@drawable/dropshadow" />
+
+            <!-- Today Exposure Section -->
+            <RelativeLayout
+                android:id="@+id/frg_toDayExposureLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_two"
+                android:layout_below="@+id/tool_bar"
+                android:background="@drawable/dropshadow" />
+
+            <!-- UV Index Section -->
+            <RelativeLayout
+                android:id="@+id/frg_SPFLayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_two"
+                android:layout_below="@+id/tool_bar"
+                android:background="@drawable/dropshadow" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

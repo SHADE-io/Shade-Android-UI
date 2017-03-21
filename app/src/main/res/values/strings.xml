@@ -54,4 +54,10 @@
     <string name="forgotPsw_btn">SUBMIT</string>
     <string name="forgotPsw_title">Reset Password</string>
 
+    <!-- Splash Screen-->
+    <string name="frag_dashboard_uvIndex_title">UV Index</string>
+    <string name="frag_dashboard_Realtime_Measurement">Realtime Measurement</string>
+
+
+
 </resources>
