@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_white_1000"
@@ -10,15 +11,29 @@
         android:layout_height="100dp"
         android:background="#A07DE6">
 
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:singleLine="true"
+            android:text="dibakar@shade.io"
+            android:textColor="@color/md_white_1000"
+            android:textSize="@dimen/sp_mediumx"
+            shade:customFont="@string/roboto_medium" />
+
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/linearLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_ten"
         android:animateLayoutChanges="true"
         android:background="@color/md_white_1000"
-        android:layout_marginTop="@dimen/dp_ten"
         android:orientation="vertical"
         android:visibility="visible">
 

@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relativeLayoutDrawerItem"
     style="?android:attr/borderlessButtonStyle"
     android:layout_width="match_parent"
@@ -23,7 +24,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/battery_charging" />
 
-        <TextView
+        <com.shades.shade.widgets.ShadeTextView
             android:id="@+id/textViewDrawerItemTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,11 +34,11 @@
             android:layout_marginLeft="72dp"
             android:layout_marginRight="16dp"
             android:layout_marginStart="72dp"
-            android:fontFamily="sans-serif-medium"
             android:singleLine="true"
             android:text="Drawer title"
             android:textColor="@color/md_black_1000_50"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            shade:customFont="@string/roboto_bold" />
     </FrameLayout>
 
 </RelativeLayout>
