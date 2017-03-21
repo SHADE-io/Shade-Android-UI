@@ -21,7 +21,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private static Context context;
 
     private enum SensorSection {
-        VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING, PAIR_SENSOR, WEAR_SHADE
+        VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING, PAIR_SENSOR, WEAR_SHADE, OVER_DAILY_LIMIT
     }
 
     private RelativeLayout relativeLayout;
@@ -63,7 +63,8 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 //        setLayoutFor(SensorSection.BLUETOOTH_OFF);
 //        setLayoutFor(SensorSection.TROUBLE_DETECTING);
 //        setLayoutFor(SensorSection.PAIR_SENSOR);
-        setLayoutFor(SensorSection.WEAR_SHADE);
+//        setLayoutFor(SensorSection.WEAR_SHADE);
+        setLayoutFor(SensorSection.OVER_DAILY_LIMIT);
         showUVIndex(5.3f);
     }
 
@@ -98,6 +99,10 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 
             case WEAR_SHADE:
                 loadWearShade();
+                break;
+
+            case OVER_DAILY_LIMIT:
+                loadOverDailyLimit();
                 break;
         }
     }
@@ -234,5 +239,20 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         }
     }
 
+    private void loadOverDailyLimit() {
+        try {
+            View view = inflater.inflate(R.layout.inflate_dashboard_overdailylimit, null);
+            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+            ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            relativeLayout.addView(view);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

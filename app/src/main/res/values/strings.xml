@@ -67,5 +67,5 @@
     <string name="frag_dashboard_sensor_pair_sensordsc">Get started by pairing your Shade sensor \nwith the app.</string>
     <string name="frag_dashboard_sensor_pair_sensor_btn">PAIR SENSOR</string>
     <string name="frag_dashboard_sensor_wearShade">Wear Shade for at least one week \nbefore setting your Daily Limit for UV \nexposure. Once set, you will see \ninformation about your Daily Limit here.</string>
-
+    <string name="frag_dashboard_sensor_OverDailyLimit">Over Daily Limit</string>
 </resources>
