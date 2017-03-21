@@ -62,5 +62,7 @@
     <string name="frag_dashboard_reached">YOU HAVE REACHED</string>
     <string name="frag_dashboard_off_limit">OF YOUR DAILY LIMIT</string>
     <string name="frag_dashboard_sensor_notdetecting">Your sensor is not detecting\nany UV right now.</string>
+    <string name="frag_dashboard_bluetooth_off">Looks like your phone’s Bluetooth is \nturned off. Enable it to connect to your \nsensor. Need Help? Chat with us.</string>
+    <string name="frag_dashboard_sensor_troubleDetecting">Trouble detecting your sensor. Please \nmake sure it is near your phone and \ncharged. Need Help? Chat with us.</string>
 
 </resources>
