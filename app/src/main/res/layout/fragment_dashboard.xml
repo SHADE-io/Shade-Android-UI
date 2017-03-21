@@ -28,7 +28,7 @@
                 android:padding="@dimen/dp_twelve">
 
                 <!--<include layout="@layout/inflate_dashboard_viewhistory" />-->
-                <include layout="@layout/inflate_dashboard_dailylimit" />
+                <!--<include layout="@layout/inflate_dashboard_dailylimit" />-->
 
             </RelativeLayout>
 
