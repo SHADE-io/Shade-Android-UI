@@ -9,8 +9,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarThumbVertical="@drawable/scrollbar"
-        android:fadingEdge="none">
+        android:fadingEdge="none"
+        android:scrollbarThumbVertical="@drawable/scrollbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,18 +28,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_two"
+                android:layout_height="@dimen/dp_five"
                 android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
             <!-- UV Index Section -->
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/frg_uvIndexLayout"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_ten"
                 android:background="@color/md_white_1000"
-                android:padding="@dimen/dp_ten">
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -78,15 +79,20 @@
                         android:text="0.00"
                         android:textColor="#C7C7CC"
                         android:textSize="@dimen/sp_largexx"
-                        shade:customFont="@string/roboto_regular" />
+                        shade:customFont="@string/roboto_light" />
                 </RelativeLayout>
 
+                <com.shades.shade.widgets.UVIndexProgress
+                    android:id="@+id/frg_prg_UVIndex"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dp_fifteen"
+                    android:layout_height="30dp" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_two"
+                android:layout_height="@dimen/dp_five"
                 android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
@@ -100,7 +106,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_two"
+                android:layout_height="@dimen/dp_five"
                 android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
@@ -114,7 +120,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_two"
+                android:layout_height="@dimen/dp_five"
                 android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
