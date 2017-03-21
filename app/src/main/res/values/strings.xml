@@ -54,9 +54,12 @@
     <string name="forgotPsw_btn">SUBMIT</string>
     <string name="forgotPsw_title">Reset Password</string>
 
-    <!-- Splash Screen-->
+    <!-- Fragment Dashboard Screen-->
     <string name="frag_dashboard_uvIndex_title">UV Index</string>
     <string name="frag_dashboard_Realtime_Measurement">Realtime Measurement</string>
+    <string name="frag_dashboard_view_history_btn">VIEW HISTORY</string>
+    <string name="frag_dashboard_view_history_dsc">You can now adjust your daily limit\nfor UV exposure from History.</string>
+
 
 
 

@@ -22,9 +22,13 @@
             <RelativeLayout
                 android:id="@+id/frg_sensor_statusLayout"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="160dp"
                 android:layout_marginTop="@dimen/dp_ten"
-                android:background="@color/md_white_1000" />
+                android:background="@color/md_white_1000">
+
+                <!--<include layout="@layout/inflate_dashboard_viewhistory" />-->
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -76,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:singleLine="true"
-                        android:text="0.00"
+                        android:text="@string/frag_dashboard_uvIndex_title"
                         android:textColor="#C7C7CC"
                         android:textSize="@dimen/sp_largexx"
                         shade:customFont="@string/roboto_light" />
@@ -85,8 +89,8 @@
                 <com.shades.shade.widgets.UVIndexProgress
                     android:id="@+id/frg_prg_UVIndex"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="@dimen/dp_fifteen"
-                    android:layout_height="30dp" />
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dp_fifteen" />
 
             </LinearLayout>
 
