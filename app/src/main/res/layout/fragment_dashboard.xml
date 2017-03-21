@@ -29,6 +29,7 @@
 
                 <!--<include layout="@layout/inflate_dashboard_viewhistory" />-->
                 <!--<include layout="@layout/inflate_dashboard_dailylimit" />-->
+                <include layout="@layout/inflate_dashboard_sensor_notdetecting" />
 
             </RelativeLayout>
 
@@ -82,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:singleLine="true"
-                        android:text="@string/frag_dashboard_uvIndex_title"
+                        android:text="0.00"
                         android:textColor="#C7C7CC"
                         android:textSize="@dimen/sp_largexx"
                         shade:customFont="@string/roboto_light" />

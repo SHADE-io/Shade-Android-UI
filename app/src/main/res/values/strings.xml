@@ -61,5 +61,6 @@
     <string name="frag_dashboard_view_history_dsc">You can now adjust your daily limit\nfor UV exposure from History.</string>
     <string name="frag_dashboard_reached">YOU HAVE REACHED</string>
     <string name="frag_dashboard_off_limit">OF YOUR DAILY LIMIT</string>
+    <string name="frag_dashboard_sensor_notdetecting">Your sensor is not detecting\nany UV right now.</string>
 
 </resources>
