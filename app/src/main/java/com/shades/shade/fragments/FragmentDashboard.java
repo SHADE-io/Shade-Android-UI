@@ -168,6 +168,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
             ((ShadeTextView) view.findViewById(R.id.frg_txt_Dsc)).setText(context.getString(R.string.frag_dashboard_sensor_troubleDetecting));
             ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(this);
+            relativeLayout.addView(view);
         } catch (Exception e) {
             e.printStackTrace();
         }
