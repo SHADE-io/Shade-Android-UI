@@ -58,14 +58,14 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 
         //Test Data
 //        setLayoutFor(SensorSection.VIEW_HISTORY);
-//        setLayoutFor(SensorSection.DAILY_LIMIT);
+        setLayoutFor(SensorSection.DAILY_LIMIT);
 //        setLayoutFor(SensorSection.SENSOR_NOT_DETECTING);
 //        setLayoutFor(SensorSection.BLUETOOTH_OFF);
 //        setLayoutFor(SensorSection.TROUBLE_DETECTING);
 //        setLayoutFor(SensorSection.PAIR_SENSOR);
 //        setLayoutFor(SensorSection.WEAR_SHADE);
 //        setLayoutFor(SensorSection.OVER_DAILY_LIMIT);
-        setLayoutFor(SensorSection.MORE_THEN_HR);
+//        setLayoutFor(SensorSection.MORE_THEN_HR);
         showUVIndex(5.3f);
     }
 
