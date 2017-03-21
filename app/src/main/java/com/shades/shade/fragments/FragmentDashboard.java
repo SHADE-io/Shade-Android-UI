@@ -21,7 +21,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private static Context context;
 
     private enum SensorSection {
-        VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING, PAIR_SENSOR, WEAR_SHADE, OVER_DAILY_LIMIT
+        VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING, PAIR_SENSOR, WEAR_SHADE, OVER_DAILY_LIMIT, MORE_THEN_HR
     }
 
     private RelativeLayout relativeLayout;
@@ -64,7 +64,8 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 //        setLayoutFor(SensorSection.TROUBLE_DETECTING);
 //        setLayoutFor(SensorSection.PAIR_SENSOR);
 //        setLayoutFor(SensorSection.WEAR_SHADE);
-        setLayoutFor(SensorSection.OVER_DAILY_LIMIT);
+//        setLayoutFor(SensorSection.OVER_DAILY_LIMIT);
+        setLayoutFor(SensorSection.MORE_THEN_HR);
         showUVIndex(5.3f);
     }
 
@@ -103,6 +104,10 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 
             case OVER_DAILY_LIMIT:
                 loadOverDailyLimit();
+                break;
+
+            case MORE_THEN_HR:
+                loadMoreThenHr();
                 break;
         }
     }
@@ -242,6 +247,22 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private void loadOverDailyLimit() {
         try {
             View view = inflater.inflate(R.layout.inflate_dashboard_overdailylimit, null);
+            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+            ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            relativeLayout.addView(view);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadMoreThenHr() {
+        try {
+            View view = inflater.inflate(R.layout.inflate_dashboard_morethenhr, null);
             view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
             ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
                 @Override
