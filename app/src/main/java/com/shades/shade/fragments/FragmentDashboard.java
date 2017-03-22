@@ -139,7 +139,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         }
         switch (layoutFor) {
             case SHOW_ADDSPF:
-                loadSpfAdd();
+                loadSpfAdd(true);
                 break;
 
             case SHOW_SPF_TIMER:
@@ -327,16 +327,22 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
      * SPF Section
      */
 
-    private void loadSpfAdd() {
+    private void loadSpfAdd(boolean isDeviceConnected) {
         try {
             View view = inflater.inflate(R.layout.inflate_dashboard_spfadd, null);
             view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-            ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_add)).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            ShadeTextView btn_add = (ShadeTextView) view.findViewById(R.id.frg_spf_btn_add);
+            if (isDeviceConnected) {
+                btn_add.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-                }
-            });
+                    }
+                });
+                btn_add.setBackgroundResource(R.drawable.button_fill_small_coral);
+            }else {
+                btn_add.setBackgroundResource(R.drawable.button_fill_small_disabled);
+            }
             frg_SPFLayout.addView(view);
         } catch (Exception e) {
             e.printStackTrace();
@@ -351,7 +357,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             ShadeTextView txt_time = (ShadeTextView) view.findViewById(R.id.frg_spf_txt_time);
             ShadeTextView btn_add = (ShadeTextView) view.findViewById(R.id.frg_spf_btn_add);
             ((LinearLayout) view.findViewById(R.id.frg_spf_layoutTime)).setVisibility(View.VISIBLE);
-            btn_add.setText("cancel SPF");
+            btn_add.setText("CANCEL SPF");
             btn_add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
