@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/frg_spf_layoutTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_fifteen">
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_two"
+            android:text="SPF"
+            android:textColor="#A07DE6"
+            android:textSize="@dimen/sp_mediumx"
+            shade:customFont="@string/roboto_medium" />
+
+
+        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/frg_spf_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dsb_indicatorColor="#A07DE6"
+            app:dsb_max="100"
+            app:dsb_min="0"
+            app:dsb_trackColor="#A07DE6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/frg_spf_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_outline_small_coral"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="CANCEL"
+            android:textColor="@color/highlightedColor"
+            android:textSize="@dimen/sp_medium"
+            shade:customFont="@string/roboto_medium" />
+
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/frg_spf_btn_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_fill_small_coral"
+            android:layout_marginLeft="@dimen/dp_fifteen"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="APPLY"
+            android:textColor="@color/md_white_1000"
+            android:textSize="@dimen/sp_medium"
+            shade:customFont="@string/roboto_medium" />
+
+    </LinearLayout>
+</LinearLayout>

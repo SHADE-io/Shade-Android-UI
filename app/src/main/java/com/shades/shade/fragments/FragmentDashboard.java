@@ -16,6 +16,8 @@ import com.shades.shade.R;
 import com.shades.shade.widgets.ShadeTextView;
 import com.shades.shade.widgets.UVIndexProgress;
 
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
+
 
 public class FragmentDashboard extends Fragment implements View.OnClickListener {
 
@@ -87,7 +89,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         showAccumulativeUnit(46f);
 
 //        setLayoutForSPF(SPF.SHOW_ADDSPF);
-        setLayoutForSPF(SPF.SHOW_SPF_TIMER);
+        setLayoutForSPF(SPF.SHOW_SPF_APPLY);
     }
 
     private void setLayoutFor(SensorSection layoutFor) {
@@ -340,7 +342,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
                     }
                 });
                 btn_add.setBackgroundResource(R.drawable.button_fill_small_coral);
-            }else {
+            } else {
                 btn_add.setBackgroundResource(R.drawable.button_fill_small_disabled);
             }
             frg_SPFLayout.addView(view);
@@ -371,18 +373,43 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     }
 
     private void loadSpfApply() {
-//        try {
-//            View view = inflater.inflate(R.layout.inflate_dashboard_spfadd, null);
-//            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-//            ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_add)).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//
-//                }
-//            });
-//            frg_SPFLayout.addView(view);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            View view = inflater.inflate(R.layout.inflate_dashboard_spfapply, null);
+            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+            ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_cancel)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_apply)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            DiscreteSeekBar seekBar = (DiscreteSeekBar) view.findViewById(R.id.frg_spf_seekbar);
+            seekBar.setMin(0);
+            seekBar.setMax(100);
+            seekBar.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
+                @Override
+                public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
+
+                }
+
+                @Override
+                public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
+
+                }
+            });
+            frg_SPFLayout.addView(view);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
