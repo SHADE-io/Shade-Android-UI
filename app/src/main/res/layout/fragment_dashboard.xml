@@ -109,7 +109,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="@dimen/dp_ten"
-                android:background="@color/md_white_1000" />
+                android:padding="@dimen/dp_twelve"
+                android:background="@color/md_white_1000" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.shades.shade.widgets.ShadeTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/frag_dashboard_sensor_todayExpo"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_mediumxx"
+                        shade:customFont="@string/roboto_regular" />
+
+                    <com.shades.shade.widgets.ShadeTextView
+                        android:id="@+id/frg_accumulated_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/frag_dashboard_sensor_Accumulated"
+                        android:textColor="#48168C"
+                        android:textSize="@dimen/sp_mediumx"
+                        shade:customFont="@string/roboto_regular" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"

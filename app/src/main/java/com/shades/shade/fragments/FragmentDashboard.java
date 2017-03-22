@@ -2,6 +2,7 @@
 package com.shades.shade.fragments;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,6 +29,8 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
     private LayoutInflater inflater;
     private UVIndexProgress UVIndex;
     private ShadeTextView txt_UVIndex;
+    private ShadeTextView txt_accumulated_unit;
+
 
     public static FragmentDashboard newInstance(int position, Context mContext) {
         FragmentDashboard f = new FragmentDashboard();
@@ -55,6 +58,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         UVIndex = (UVIndexProgress) v.findViewById(R.id.frg_prg_UVIndex);
         UVIndex = (UVIndexProgress) v.findViewById(R.id.frg_prg_UVIndex);
         txt_UVIndex = (ShadeTextView) v.findViewById(R.id.frg_txt_UVIndex);
+        txt_accumulated_unit = (ShadeTextView) v.findViewById(R.id.frg_accumulated_unit);
 
         //Test Data
 //        setLayoutFor(SensorSection.VIEW_HISTORY);
@@ -67,6 +71,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 //        setLayoutFor(SensorSection.OVER_DAILY_LIMIT);
 //        setLayoutFor(SensorSection.MORE_THEN_HR);
         showUVIndex(5.3f);
+        showAccumulativeUnit(46f);
     }
 
     private void setLayoutFor(SensorSection layoutFor) {
@@ -121,11 +126,16 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         if (uvIndex > 0) {
             UVIndex.setPGIndex(uvIndex);
             txt_UVIndex.setText("" + uvIndex);
+            txt_UVIndex.setTextColor(getResources().getColor(R.color.textColor));
         } else {
             UVIndex.setPGIndex(0);
             txt_UVIndex.setText("0.00");
+            txt_UVIndex.setTextColor(Color.parseColor("#C7C7CC"));
         }
+    }
 
+    private void showAccumulativeUnit(float value) {
+        txt_accumulated_unit.setText("Accumulated so far: " + value + " UV Units");
     }
 
     /**

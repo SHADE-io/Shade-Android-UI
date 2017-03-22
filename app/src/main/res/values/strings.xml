@@ -70,4 +70,6 @@
     <string name="frag_dashboard_sensor_OverDailyLimit">Over Daily Limit</string>
     <string name="frag_dashboard_sensor_morethenhr">More than 4 hours</string>
     <string name="frag_dashboard_sensor_atcurrentuvindex">LEFT AT CURRENT UV INDEX</string>
+    <string name="frag_dashboard_sensor_todayExpo">Today\'s  Exposure</string>
+    <string name="frag_dashboard_sensor_Accumulated">Accumulated so far: 52 UV Units</string>
 </resources>
