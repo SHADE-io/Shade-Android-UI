@@ -391,6 +391,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             DiscreteSeekBar seekBar = (DiscreteSeekBar) view.findViewById(R.id.frg_spf_seekbar);
             seekBar.setMin(0);
             seekBar.setMax(100);
+            seekBar.setProgress(60);
             seekBar.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
                 @Override
                 public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
