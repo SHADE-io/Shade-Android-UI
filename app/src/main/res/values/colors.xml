@@ -3,7 +3,7 @@
 
     <!-- App Style Color-->
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#cfbef2</color>
+    <color name="colorPrimaryDark">#DBDBDB</color>
     <!--<color name="colorAccent">#48168C</color>-->
     <color name="colorAccent">#FB6463</color>
 
