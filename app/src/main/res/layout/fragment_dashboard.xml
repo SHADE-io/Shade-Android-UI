@@ -36,7 +36,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_five"
-                android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
             <!-- UV Index Section -->
@@ -100,7 +99,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_five"
-                android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
             <!-- Today Exposure Section -->
@@ -143,10 +141,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_five"
-                android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
-            <!-- UV Index Section -->
+            <!-- SPF Section -->
             <RelativeLayout
                 android:id="@+id/frg_SPFLayout"
                 android:layout_width="match_parent"
@@ -157,7 +154,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_five"
-                android:layout_below="@+id/tool_bar"
                 android:background="@drawable/dropshadow" />
 
 

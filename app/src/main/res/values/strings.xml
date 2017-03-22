@@ -72,4 +72,7 @@
     <string name="frag_dashboard_sensor_atcurrentuvindex">LEFT AT CURRENT UV INDEX</string>
     <string name="frag_dashboard_sensor_todayExpo">Today\'s  Exposure</string>
     <string name="frag_dashboard_sensor_Accumulated">Accumulated so far: 52 UV Units</string>
+    <string name="frag_dashboard_spf_ADDSPF">ADD SPF</string>
+    <string name="frag_dashboard_spf_SUNSCREENCOUNTDOWN">SUNSCREEN COUNTDOWN</string>
+
 </resources>

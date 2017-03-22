@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.shades.shade.R;
@@ -25,12 +26,19 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING, PAIR_SENSOR, WEAR_SHADE, OVER_DAILY_LIMIT, MORE_THEN_HR
     }
 
+    private enum SPF {
+        SHOW_ADDSPF, SHOW_SPF_APPLY, SHOW_SPF_TIMER
+    }
+
     private RelativeLayout relativeLayout;
     private LayoutInflater inflater;
     private UVIndexProgress UVIndex;
     private ShadeTextView txt_UVIndex;
     private ShadeTextView txt_accumulated_unit;
 
+    private RelativeLayout frg_SPFLayout;
+    private ShadeTextView spf_txt_time;
+    private ShadeTextView spf_btn_add;
 
     public static FragmentDashboard newInstance(int position, Context mContext) {
         FragmentDashboard f = new FragmentDashboard();
@@ -58,7 +66,12 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         UVIndex = (UVIndexProgress) v.findViewById(R.id.frg_prg_UVIndex);
         UVIndex = (UVIndexProgress) v.findViewById(R.id.frg_prg_UVIndex);
         txt_UVIndex = (ShadeTextView) v.findViewById(R.id.frg_txt_UVIndex);
+
         txt_accumulated_unit = (ShadeTextView) v.findViewById(R.id.frg_accumulated_unit);
+
+        frg_SPFLayout = (RelativeLayout) v.findViewById(R.id.frg_SPFLayout);
+        spf_txt_time = (ShadeTextView) v.findViewById(R.id.frg_spf_txt_time);
+        spf_btn_add = (ShadeTextView) v.findViewById(R.id.frg_spf_btn_add);
 
         //Test Data
 //        setLayoutFor(SensorSection.VIEW_HISTORY);
@@ -72,6 +85,9 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
 //        setLayoutFor(SensorSection.MORE_THEN_HR);
         showUVIndex(5.3f);
         showAccumulativeUnit(46f);
+
+//        setLayoutForSPF(SPF.SHOW_ADDSPF);
+        setLayoutForSPF(SPF.SHOW_SPF_TIMER);
     }
 
     private void setLayoutFor(SensorSection layoutFor) {
@@ -114,6 +130,26 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             case MORE_THEN_HR:
                 loadMoreThenHr();
                 break;
+        }
+    }
+
+    private void setLayoutForSPF(SPF layoutFor) {
+        if (frg_SPFLayout != null && frg_SPFLayout.getChildCount() >= 1) {
+            frg_SPFLayout.removeAllViews();
+        }
+        switch (layoutFor) {
+            case SHOW_ADDSPF:
+                loadSpfAdd();
+                break;
+
+            case SHOW_SPF_TIMER:
+                loadSpfTimer();
+                break;
+
+            case SHOW_SPF_APPLY:
+                loadSpfApply();
+                break;
+
         }
     }
 
@@ -286,4 +322,61 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         }
     }
 
+
+    /**
+     * SPF Section
+     */
+
+    private void loadSpfAdd() {
+        try {
+            View view = inflater.inflate(R.layout.inflate_dashboard_spfadd, null);
+            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+            ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_add)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            frg_SPFLayout.addView(view);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadSpfTimer() {
+        try {
+            View view = inflater.inflate(R.layout.inflate_dashboard_spfadd, null);
+            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+
+            ShadeTextView txt_time = (ShadeTextView) view.findViewById(R.id.frg_spf_txt_time);
+            ShadeTextView btn_add = (ShadeTextView) view.findViewById(R.id.frg_spf_btn_add);
+            ((LinearLayout) view.findViewById(R.id.frg_spf_layoutTime)).setVisibility(View.VISIBLE);
+            btn_add.setText("cancel SPF");
+            btn_add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            frg_SPFLayout.addView(view);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadSpfApply() {
+//        try {
+//            View view = inflater.inflate(R.layout.inflate_dashboard_spfadd, null);
+//            view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+//            ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_add)).setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+//                }
+//            });
+//            frg_SPFLayout.addView(view);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+    }
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/frg_spf_layoutTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/frag_dashboard_spf_SUNSCREENCOUNTDOWN"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_mediumx"
+            shade:customFont="@string/roboto_regular" />
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/frg_spf_txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_five"
+            android:layout_marginTop="@dimen/dp_five"
+            android:gravity="center"
+            android:text="1:30:00"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_largexxx"
+            shade:customFont="@string/roboto_regular" />
+
+    </LinearLayout>
+
+    <com.shades.shade.widgets.ShadeTextView
+        android:id="@+id/frg_spf_btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_fill_small_coral"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/frag_dashboard_spf_ADDSPF"
+        android:textColor="@color/md_white_1000"
+        android:textSize="@dimen/sp_medium"
+        shade:customFont="@string/roboto_medium" />
+
+</LinearLayout>
