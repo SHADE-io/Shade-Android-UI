@@ -38,7 +38,7 @@
             android:text="Drawer title"
             android:textColor="@color/md_black_1000_50"
             android:textSize="14sp"
-            shade:customFont="@string/roboto_bold" />
+            shade:customFont="@string/roboto_regular" />
     </FrameLayout>
 
 </RelativeLayout>
