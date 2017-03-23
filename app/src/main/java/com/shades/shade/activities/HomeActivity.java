@@ -44,6 +44,12 @@ public class HomeActivity extends ShadeBaseActivity {
     private RecyclerView.Adapter adapterDrawer;
     private ShadeTextView userEmail;
 
+    private ViewPager pager;
+    private PagerSlidingTabStrip tabs;
+    private final String[] TITLES = {"DASHBOARD", "HISTORY", "CHECK IN"};
+    private FragmentDashboard frgDashboard;
+    private FragmentHistory frgHistory;
+    private FragmentCheckIn frgCheckIn;
 
     @Override
     public void onBackPressed() {
@@ -186,20 +192,14 @@ public class HomeActivity extends ShadeBaseActivity {
         }
     }
 
-
-    private ViewPager pager;
-    private PagerSlidingTabStrip tabs;
-    private final String[] TITLES = {"DASHBOARD", "HISTORY", "CHECK IN"};
-
     private void loadTabPager() {
         tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         pager = (ViewPager) findViewById(R.id.pager);
-        MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        pager.setAdapter(pagerAdapter);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         tabs.setDrawBox(false);
         tabs.setViewPager(pager);
     }
-
 
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -231,11 +231,14 @@ public class HomeActivity extends ShadeBaseActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return FragmentDashboard.newInstance(position, context);
+                    frgDashboard = FragmentDashboard.newInstance(position, context);
+                    return frgDashboard;
                 case 1:
-                    return FragmentHistory.newInstance(position, context);
+                    frgHistory = FragmentHistory.newInstance(position, context);
+                    return frgHistory;
                 case 2:
-                    return FragmentCheckIn.newInstance(position, context);
+                    frgCheckIn = FragmentCheckIn.newInstance(position, context);
+                    return frgCheckIn;
             }
             return null;
         }
