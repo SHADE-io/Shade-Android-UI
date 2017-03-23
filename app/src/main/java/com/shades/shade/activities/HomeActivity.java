@@ -208,7 +208,7 @@ public class HomeActivity extends ShadeBaseActivity {
         tabs.setDrawBox(false);
         tabs.setViewPager(pager);
 
-        pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
