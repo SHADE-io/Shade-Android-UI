@@ -20,6 +20,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.shades.shade.R;
 import com.shades.shade.adapters.DrawerAdapter;
@@ -36,6 +37,9 @@ import java.util.ArrayList;
 public class HomeActivity extends ShadeBaseActivity {
 
     private Context context;
+    private ShadeTextView txt_title;
+    private ImageView batteryStatus;
+
     private ActionBarDrawerToggle mDrawerToggle;
     private Toolbar toolbar;
     private DrawerLayout mDrawerLayout;
@@ -70,6 +74,8 @@ public class HomeActivity extends ShadeBaseActivity {
     protected void onUiLayout() {
         setContentView(R.layout.activity_home);
         context = HomeActivity.this;
+
+
     }
 
     @Override
@@ -97,8 +103,13 @@ public class HomeActivity extends ShadeBaseActivity {
     }
 
     public void toolbarStatusBar() {
+        txt_title = (ShadeTextView) findViewById(R.id.topBar_txt_title);
+        batteryStatus = (ImageView) findViewById(R.id.topBar_batteryStatus);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        txt_title.setText(TITLES[0]);//Title
+        batteryStatus.setImageResource(R.drawable.battery_full);//Battery statusChange
     }
 
     public void navigationDrawer() {
@@ -196,6 +207,23 @@ public class HomeActivity extends ShadeBaseActivity {
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         tabs.setDrawBox(false);
         tabs.setViewPager(pager);
+
+        pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                txt_title.setText(TITLES[position]);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     public class MyPagerAdapter extends FragmentStatePagerAdapter {

@@ -28,7 +28,7 @@
             android:layout_marginLeft="@dimen/dp_fifteen"
             android:text="@string/splash_btn_signIn"
             android:textColor="@color/textColor_signin_tiitle"
-            android:textSize="@dimen/sp_mediumx"
+            android:textSize="@dimen/sp_mediumxx"
             shade:customFont="@string/roboto_medium" />
     </LinearLayout>
 </LinearLayout>

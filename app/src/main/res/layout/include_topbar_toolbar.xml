@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    tools:ignore="UnusedAttribute" >
+    tools:ignore="UnusedAttribute">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/topBar_txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/splash_btn_signIn"
+            android:textColor="@color/textColor_signin_tiitle"
+            android:textSize="@dimen/sp_mediumxx"
+            shade:customFont="@string/roboto_medium" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_eight"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/topBar_batteryStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/battery_full" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 </android.support.v7.widget.Toolbar>
