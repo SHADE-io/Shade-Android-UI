@@ -221,7 +221,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             ((ImageView) view.findViewById(R.id.img_rightArrow)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    setLayoutFor(SensorSection.VIEW_HISTORY);
                 }
             });
             relativeLayout.addView(view);
