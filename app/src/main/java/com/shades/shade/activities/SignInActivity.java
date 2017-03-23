@@ -63,6 +63,10 @@ public class SignInActivity extends ShadeBaseActivity {
                 return false;
             }
         });
+
+        //Test
+        edt_email.setText("dibkar.ece@gmail.com");
+        edt_password.setText("123456");
     }
 
     @Override
@@ -88,8 +92,7 @@ public class SignInActivity extends ShadeBaseActivity {
                 break;
 
             case R.id.signIn_btn_signIn:
-//                onSinInButtonEvent();
-                goToSignIn();
+                onSinInButtonEvent();
                 break;
 
             case R.id.signIn_btn_forgotPassword:
@@ -154,7 +157,7 @@ public class SignInActivity extends ShadeBaseActivity {
         } else {
             txtErrorPassword.setVisibility(View.INVISIBLE);
         }
-
+        goToSignIn();
     }
 
 
