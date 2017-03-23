@@ -6,23 +6,21 @@
     <string name="drawer_close">close drawer</string>
 
     <string-array name="drawer">
+        <item>Settings</item>
         <item>Chat with Us</item>
-        <item>Sensor</item>
-        <item>Notifications</item>
-        <item>Change Password</item>
+        <item>Help Articles</item>
         <item>Legal Information</item>
-        <item>Help</item>
+        <item>Change Password</item>
         <item>Sign Out</item>
     </string-array>
 
     <array name="drawerIcons">
-        <item>@drawable/ic_sms_black_24dp</item>
-        <item>@drawable/ic_lens_black_24dp</item>
-        <item>@drawable/ic_notifications_black_24dp</item>
-        <item>@drawable/ic_https_black_24dp</item>
-        <item>@drawable/ic_error_black_24dp</item>
-        <item>@drawable/ic_question_answer_black_24dp</item>
-        <item>@drawable/ic_account_circle_black_24dp</item>
+        <item>@drawable/icon_settings</item>
+        <item>@drawable/icon_chat</item>
+        <item>@drawable/icon_help</item>
+        <item>@drawable/icon_info</item>
+        <item>@drawable/icon_lock</item>
+        <item>@drawable/icon_acct</item>
     </array>
 
 

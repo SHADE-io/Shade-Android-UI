@@ -16,13 +16,13 @@
 
         <ImageView
             android:id="@+id/imageViewDrawerIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/battery_charging" />
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_acct" />
 
         <com.shades.shade.widgets.ShadeTextView
             android:id="@+id/textViewDrawerItemTitle"

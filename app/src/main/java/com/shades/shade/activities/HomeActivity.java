@@ -164,24 +164,21 @@ public class HomeActivity extends ShadeBaseActivity {
 
     private void onRecyclerItemClickerListner(int childAdapterPosition) {
         switch (AppConstant.DrawerItems.values()[childAdapterPosition]) {
+            case Settings:
+                break;
+
             case ChatWithUs:
                 break;
 
-            case Sensor:
-                break;
-
-            case Notifications:
-                break;
-
-            case ChangePassword:
-                startActivity(new Intent(context, ForgotPasswordActivity.class));
-                overridePendingTransition(0, 0);
+            case HelpArticles:
                 break;
 
             case LegalInformation:
                 break;
 
-            case Help:
+            case ChangePassword:
+                startActivity(new Intent(context, ForgotPasswordActivity.class));
+                overridePendingTransition(0, 0);
                 break;
 
             case SignOut:

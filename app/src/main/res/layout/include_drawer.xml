@@ -22,8 +22,8 @@
             android:singleLine="true"
             android:text="dibakar@shade.io"
             android:textColor="@color/md_white_1000"
-            android:textSize="@dimen/sp_mediumx"
-            shade:customFont="@string/roboto_medium" />
+            android:textSize="@dimen/sp_medium"
+            shade:customFont="@string/roboto_regular" />
 
     </RelativeLayout>
 

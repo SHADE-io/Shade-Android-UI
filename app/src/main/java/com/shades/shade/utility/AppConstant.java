@@ -7,7 +7,7 @@ import android.view.View;
 
 public class AppConstant {
     public static enum DrawerItems {
-        ChatWithUs, Sensor, Notifications, ChangePassword, LegalInformation, Help, SignOut
+        Settings, ChatWithUs, HelpArticles, LegalInformation, ChangePassword, SignOut
     }
 
     public static void showSnakeBar(View view, String message, boolean isShowingButton, String btnName, View.OnClickListener mOnClickListener) {
