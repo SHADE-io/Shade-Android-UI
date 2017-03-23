@@ -88,8 +88,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         showUVIndex(5.3f);
         showAccumulativeUnit(46f);
 
-//        setLayoutForSPF(SPF.SHOW_ADDSPF);
-        setLayoutForSPF(SPF.SHOW_SPF_APPLY);
+        setLayoutForSPF(SPF.SHOW_ADDSPF);
     }
 
     private void setLayoutFor(SensorSection layoutFor) {
@@ -338,7 +337,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
                 btn_add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        setLayoutForSPF(SPF.SHOW_SPF_APPLY);
                     }
                 });
                 btn_add.setBackgroundResource(R.drawable.button_fill_small_coral);
@@ -363,7 +362,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             btn_add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    setLayoutForSPF(SPF.SHOW_ADDSPF);
                 }
             });
             frg_SPFLayout.addView(view);
@@ -379,13 +378,13 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
             ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_cancel)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    setLayoutForSPF(SPF.SHOW_ADDSPF);
                 }
             });
             ((ShadeTextView) view.findViewById(R.id.frg_spf_btn_apply)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    setLayoutForSPF(SPF.SHOW_SPF_TIMER);
                 }
             });
             DiscreteSeekBar seekBar = (DiscreteSeekBar) view.findViewById(R.id.frg_spf_seekbar);
