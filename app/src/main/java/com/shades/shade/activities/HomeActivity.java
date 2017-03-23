@@ -1,6 +1,7 @@
 package com.shades.shade.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Parcelable;
@@ -16,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -25,6 +27,7 @@ import com.shades.shade.fragments.FragmentCheckIn;
 import com.shades.shade.fragments.FragmentDashboard;
 import com.shades.shade.fragments.FragmentHistory;
 import com.shades.shade.model.DrawerItem;
+import com.shades.shade.utility.AppConstant;
 import com.shades.shade.widgets.PagerSlidingTabStrip;
 import com.shades.shade.widgets.ShadeTextView;
 
@@ -67,6 +70,7 @@ public class HomeActivity extends ShadeBaseActivity {
     protected void onUiComponentInit() {
         toolbarStatusBar();
         navigationDrawer();
+        loadDrawerItems();
         loadTabPager();
     }
 
@@ -107,24 +111,15 @@ public class HomeActivity extends ShadeBaseActivity {
             layoutParams.width = displayMetrics.widthPixels + (20 * Math.round(displayMetrics.density)) - displayMetrics.widthPixels / 2;
         }
 
-        // Setup Drawer Icon
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         mDrawerToggle.syncState();
 
-        // statusBar color behind navigation drawer
-        TypedValue typedValueStatusBarColor = new TypedValue();
-        getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValueStatusBarColor, true);
-        final int colorStatusBar = typedValueStatusBarColor.data;
-        mDrawerLayout.setStatusBarBackgroundColor(colorStatusBar);
+    }
 
-        // Setup RecyclerView inside drawer
-        final TypedValue typedValue = new TypedValue();
-        getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
-        final int color = typedValue.data;
-
+    private void loadDrawerItems() {
         recyclerViewDrawer = (RecyclerView) findViewById(R.id.recyclerViewDrawer);
         recyclerViewDrawer.setHasFixedSize(true);
         recyclerViewDrawer.setLayoutManager(new LinearLayoutManager(context));
@@ -138,6 +133,57 @@ public class HomeActivity extends ShadeBaseActivity {
         drawerIcons.recycle();
         adapterDrawer = new DrawerAdapter(context, drawerItems);
         recyclerViewDrawer.setAdapter(adapterDrawer);
+        recyclerViewDrawer.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                View rowItem = rv.findChildViewUnder(e.getX(), e.getY());
+                if (rowItem != null && e.getAction() == MotionEvent.ACTION_UP) {
+                    onRecyclerItemClickerListner(rv.getChildAdapterPosition(rowItem));
+                    return true;
+                }
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+    }
+
+    private void onRecyclerItemClickerListner(int childAdapterPosition) {
+        switch (AppConstant.DrawerItems.values()[childAdapterPosition]) {
+            case ChatWithUs:
+                break;
+
+            case Sensor:
+                break;
+
+            case Notifications:
+                break;
+
+            case ChangePassword:
+                startActivity(new Intent(context, ForgotPasswordActivity.class));
+                overridePendingTransition(0, 0);
+                break;
+
+            case LegalInformation:
+                break;
+
+            case Help:
+                break;
+
+            case SignOut:
+                break;
+        }
+        if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
+            mDrawerLayout.closeDrawer(Gravity.LEFT);
+        }
     }
 
 
