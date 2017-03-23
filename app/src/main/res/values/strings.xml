@@ -73,4 +73,15 @@
     <string name="frag_dashboard_spf_ADDSPF">ADD SPF</string>
     <string name="frag_dashboard_spf_SUNSCREENCOUNTDOWN">SUNSCREEN COUNTDOWN</string>
 
+    <!-- Fragment Dashboard Screen-->
+    <string name="frag_history_UVExposure">UV Exposure</string>
+    <string name="frag_history_DailyLimit">Daily Limit: 25 UV Units</string>
+    <string name="frag_history_CheckIn">Check In</string>
+    <string name="frag_history_TotalDays">Total Days of Exposure</string>
+    <string name="frag_history_AvgDays">Average Daily Exposure</string>
+    <string name="frag_history_YDailyLimit">Your Daily Limit</string>
+    <string name="frag_history_YHighUV">Your High UV Value</string>
+    <string name="frag_history_AvgCheckIn">Average Check In</string>
+    <string name="frag_history_AllData">See All Data</string>
+
 </resources>

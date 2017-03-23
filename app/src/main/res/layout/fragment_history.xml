@@ -9,8 +9,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarThumbVertical="@drawable/scrollbar"
-        android:fadingEdge="none">
+        android:fadingEdge="none"
+        android:scrollbarThumbVertical="@drawable/scrollbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,7 +18,362 @@
             android:orientation="vertical">
 
 
+            <!-- Daily Limit -->
+            <LinearLayout
+                android:id="@+id/frg_history_UVExp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_UVExposure"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sp_mediumxx"
+                            shade:customFont="@string/roboto_regular" />
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:id="@+id/frg_history_dailyLimit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_DailyLimit"
+                            android:textColor="#48168C"
+                            android:textSize="@dimen/sp_mediumx"
+                            shade:customFont="@string/roboto_regular" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/frg_history_imgMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="@dimen/dp_five"
+                        android:paddingLeft="@dimen/dp_five"
+                        android:paddingTop="@dimen/dp_five"
+                        android:src="@drawable/icon_more" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/frg_history_dailyLimitGraphLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="@dimen/dp_five"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_five"
+                android:background="@drawable/dropshadow" />
+
+
+            <!-- Check In -->
+            <LinearLayout
+                android:id="@+id/frg_history_checkIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/frag_history_CheckIn"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sp_mediumxx"
+                    shade:customFont="@string/roboto_regular" />
+
+                <LinearLayout
+                    android:id="@+id/frg_history_checkInGraphLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="@dimen/dp_five"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_five"
+                android:background="@drawable/dropshadow" />
+
+
+            <!-- History List -->
+            <LinearLayout
+                android:id="@+id/frg_history_historyList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+
+                <!-- Item 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_fifteen"
+                        android:paddingTop="@dimen/dp_fifteen"
+                        android:src="@drawable/icon_calendar" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_twenttfive"
+                        android:orientation="vertical">
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_TotalDays"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sp_mediumxx"
+                            shade:customFont="@string/roboto_regular" />
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:id="@+id/frg_history_txt_TotalDays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_DailyLimit"
+                            android:textColor="#48168C"
+                            android:textSize="@dimen/sp_mediumx"
+                            shade:customFont="@string/roboto_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Item 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_fifteen"
+                        android:paddingTop="@dimen/dp_fifteen"
+                        android:src="@drawable/icon_sun" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_twenttfive"
+                        android:orientation="vertical">
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_AvgDays"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sp_mediumxx"
+                            shade:customFont="@string/roboto_regular" />
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:id="@+id/frg_history_txt_AvgDays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_DailyLimit"
+                            android:textColor="#48168C"
+                            android:textSize="@dimen/sp_mediumx"
+                            shade:customFont="@string/roboto_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!-- Item 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_fifteen"
+                        android:paddingTop="@dimen/dp_fifteen"
+                        android:src="@drawable/icon_data" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_twenttfive"
+                        android:orientation="vertical">
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_YDailyLimit"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sp_mediumxx"
+                            shade:customFont="@string/roboto_regular" />
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:id="@+id/frg_history_txt_YDailyLimit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_DailyLimit"
+                            android:textColor="#48168C"
+                            android:textSize="@dimen/sp_mediumx"
+                            shade:customFont="@string/roboto_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Item 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_fifteen"
+                        android:paddingTop="@dimen/dp_fifteen"
+                        android:src="@drawable/icon_warning" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_twenttfive"
+                        android:orientation="vertical">
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_YHighUV"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sp_mediumxx"
+                            shade:customFont="@string/roboto_regular" />
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:id="@+id/frg_history_txt_YHighUV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_DailyLimit"
+                            android:textColor="#48168C"
+                            android:textSize="@dimen/sp_mediumx"
+                            shade:customFont="@string/roboto_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!-- Item 5 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_fifteen"
+                        android:paddingTop="@dimen/dp_fifteen"
+                        android:src="@drawable/icon_checkin" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_twenttfive"
+                        android:orientation="vertical">
+
+                        <com.shades.shade.widgets.ShadeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/frag_history_AvgCheckIn"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sp_mediumxx"
+                            shade:customFont="@string/roboto_regular" />
+
+                        <ImageView
+                            android:id="@+id/frg_history_txt_AvgCheckIn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/alldata_emoji_1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_five"
+                android:background="@drawable/dropshadow" />
+
+            <!-- All Data -->
+            <LinearLayout
+                android:id="@+id/frg_toDayExposureLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_fifteen"
+                        android:paddingTop="@dimen/dp_fifteen"
+                        android:src="@drawable/icon_list" />
+
+                    <com.shades.shade.widgets.ShadeTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_twenttfive"
+                        android:text="@string/frag_history_AllData"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_mediumxx"
+                        shade:customFont="@string/roboto_regular" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
