@@ -65,7 +65,7 @@ public class FragmentCheckIn extends Fragment {
     private void selectSmiley(int index) {
         for (int i = 0; i < listSmiley.size(); i++) {
             listSmiley.get(i).setSelected((index == i) ? true : false);
-            setState(state[i]);
+            setState(state[index]);
         }
     }
 
