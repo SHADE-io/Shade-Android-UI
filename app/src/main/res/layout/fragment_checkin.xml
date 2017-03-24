@@ -7,122 +7,135 @@
     android:orientation="vertical">
 
 
-    <!-- Smiley  Section-->
-    <LinearLayout
-        android:id="@+id/frg_checkIn_SmileyLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_ten"
-        android:background="@color/md_white_1000"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="@dimen/dp_twelve">
-
-
-        <com.shades.shade.widgets.ShadeTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dp_twelve"
-            android:text="@string/frag_checkIn_feelingToday"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/sp_mediumxx"
-            shade:customFont="@string/roboto_regular" />
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbarThumbVertical="@drawable/scrollbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/dp_ten"
-            android:paddingTop="@dimen/dp_ten">
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/frg_checkIn_imgSmiley1"
-                android:layout_width="0dp"
+            <!-- Smiley  Section-->
+            <LinearLayout
+                android:id="@+id/frg_checkIn_SmileyLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/selector_levelicon_1" />
+                android:layout_marginTop="@dimen/dp_ten"
+                android:background="@color/md_white_1000"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
 
-            <ImageView
-                android:id="@+id/frg_checkIn_imgSmiley2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/selector_levelicon_2" />
 
-            <ImageView
-                android:id="@+id/frg_checkIn_imgSmiley3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/selector_levelicon_3" />
+                <com.shades.shade.widgets.ShadeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_twelve"
+                    android:text="@string/frag_checkIn_feelingToday"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sp_mediumxx"
+                    shade:customFont="@string/roboto_regular" />
 
-            <ImageView
-                android:id="@+id/frg_checkIn_imgSmiley4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/selector_levelicon_4" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_ten"
+                    android:paddingTop="@dimen/dp_ten">
 
-            <ImageView
-                android:id="@+id/frg_checkIn_imgSmiley5"
-                android:layout_width="0dp"
+                    <ImageView
+                        android:id="@+id/frg_checkIn_imgSmiley1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/selector_levelicon_1" />
+
+                    <ImageView
+                        android:id="@+id/frg_checkIn_imgSmiley2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/selector_levelicon_2" />
+
+                    <ImageView
+                        android:id="@+id/frg_checkIn_imgSmiley3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/selector_levelicon_3" />
+
+                    <ImageView
+                        android:id="@+id/frg_checkIn_imgSmiley4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/selector_levelicon_4" />
+
+                    <ImageView
+                        android:id="@+id/frg_checkIn_imgSmiley5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/selector_levelicon_5" />
+                </LinearLayout>
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/frg_checkIn_smileyState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_twelve"
+                    android:text="Normal"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sp_mediumxx"
+                    shade:customFont="@string/roboto_regular" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/dropshadow" />
+
+            <!-- Edit   Section-->
+            <LinearLayout
+                android:id="@+id/frg_checkIn_Edit"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@color/md_white_1000"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <com.shades.shade.widgets.ShadeEditText
+                    android:id="@+id/frg_checkIn_edtFelling"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="top|left"
+                    android:hint="@string/frag_checkIn_edtFeelingHint"
+                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/textColor_hint"
+                    android:textSize="@dimen/sp_medium"
+                    shade:customFont="@string/roboto_regular" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_five"
+                android:background="@drawable/dropshadow" />
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/selector_levelicon_5" />
+                android:gravity="left"
+                android:padding="@dimen/dp_twelve"
+                android:text="@string/frag_checkIn_edtFeelingHintSuge"
+                android:textColor="#9B9B9B"
+                android:textSize="@dimen/sp_medium"
+                shade:customFont="@string/roboto_regular" />
+
         </LinearLayout>
-
-        <com.shades.shade.widgets.ShadeTextView
-            android:id="@+id/frg_checkIn_smileyState"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dp_twelve"
-            android:text="Normal"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/sp_mediumxx"
-            shade:customFont="@string/roboto_regular" />
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@drawable/dropshadow" />
-
-    <!-- Edit   Section-->
-    <LinearLayout
-        android:id="@+id/frg_checkIn_Edit"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:background="@color/md_white_1000"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="@dimen/dp_twelve">
-
-        <com.shades.shade.widgets.ShadeEditText
-            android:id="@+id/frg_checkIn_edtFelling"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:gravity="top|left"
-            android:hint="@string/frag_checkIn_edtFeelingHint"
-            android:textColor="@color/textColor"
-            android:textColorHint="@color/textColor_hint"
-            android:textSize="@dimen/sp_medium"
-            shade:customFont="@string/roboto_regular" />
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_five"
-        android:background="@drawable/dropshadow" />
-
-    <com.shades.shade.widgets.ShadeTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:padding="@dimen/dp_twelve"
-        android:text="@string/frag_checkIn_edtFeelingHintSuge"
-        android:textColor="#9B9B9B"
-        android:textSize="@dimen/sp_medium"
-        shade:customFont="@string/roboto_regular" />
-
+    </ScrollView>
 </LinearLayout>
