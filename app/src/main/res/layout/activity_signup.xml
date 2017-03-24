@@ -172,7 +172,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_two"
+        android:layout_height="@dimen/dp_five"
         android:layout_below="@+id/include_topbar"
         android:background="@drawable/dropshadow" />
 
