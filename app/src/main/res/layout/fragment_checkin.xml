@@ -32,8 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/dp_twenttfive"
-            android:paddingTop="@dimen/dp_twelve">
+            android:paddingBottom="@dimen/dp_ten"
+            android:paddingTop="@dimen/dp_ten">
 
             <ImageView
                 android:id="@+id/frg_checkIn_imgSmiley1"
@@ -71,6 +71,15 @@
                 android:src="@drawable/selector_levelicon_5" />
         </LinearLayout>
 
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/frg_checkIn_smileyState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_twelve"
+            android:text="Normal"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_mediumxx"
+            shade:customFont="@string/roboto_regular" />
     </LinearLayout>
 
     <RelativeLayout
@@ -92,8 +101,8 @@
             android:id="@+id/frg_checkIn_edtFelling"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="top|left"
             android:background="@android:color/transparent"
+            android:gravity="top|left"
             android:hint="@string/frag_checkIn_edtFeelingHint"
             android:textColor="@color/textColor"
             android:textColorHint="@color/textColor_hint"
