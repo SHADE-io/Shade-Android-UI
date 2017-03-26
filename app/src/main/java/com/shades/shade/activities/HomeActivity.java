@@ -24,6 +24,8 @@ import android.widget.ImageView;
 
 import com.shades.shade.R;
 import com.shades.shade.adapters.DrawerAdapter;
+import com.shades.shade.dialogs.DialogButtonClickListener;
+import com.shades.shade.dialogs.ShadeAlertDialog;
 import com.shades.shade.fragments.FragmentCheckIn;
 import com.shades.shade.fragments.FragmentDashboard;
 import com.shades.shade.fragments.FragmentHistory;
@@ -55,13 +57,14 @@ public class HomeActivity extends ShadeBaseActivity {
     private FragmentHistory frgHistory;
     private FragmentCheckIn frgCheckIn;
 
+    private ShadeAlertDialog dialog;
+
     @Override
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
             mDrawerLayout.closeDrawer(Gravity.LEFT);
         } else {
-            super.onBackPressed();
-            overridePendingTransition(0, 0);
+            onExit();
         }
     }
 
@@ -267,5 +270,24 @@ public class HomeActivity extends ShadeBaseActivity {
             }
             return null;
         }
+    }
+
+    private void onExit() {
+        dialog = new ShadeAlertDialog(context, getString(R.string.dialog_message_exit),
+                getString(R.string.dialog_pButton_Yes), getString(R.string.dialog_nButton_No), new DialogButtonClickListener() {
+            @Override
+            public void onPositiveButtonClick() {
+                dialog.dismissDialog();
+                overridePendingTransition(0, 0);
+                finish();
+            }
+
+            @Override
+            public void onNegativeButtonClick() {
+                dialog.dismissDialog();
+            }
+        });
+        dialog.prepareDialog();
+        dialog.showDialog();
     }
 }

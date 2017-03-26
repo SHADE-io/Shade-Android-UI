@@ -89,4 +89,10 @@
     <string name="frag_checkIn_edtFeelingHint">Anything bothering you today? Tap to type…</string>
     <string name="frag_checkIn_edtFeelingHintSuge">Edit as many times as you need to until midnight.</string>
 
+    <!-- Dialog Text -->
+
+    <string name="dialog_message_exit">Are you sure you want to cancel\n your sunscreen application?</string>
+    <string name="dialog_pButton_Yes">YES</string>
+    <string name="dialog_nButton_No">NO</string>
+
 </resources>
