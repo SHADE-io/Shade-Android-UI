@@ -88,7 +88,7 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         showUVIndex(5.3f);
         showAccumulativeUnit(46f);
 
-        setLayoutForSPF(SPF.SHOW_ADDSPF, false);
+        setLayoutForSPF(SPF.SHOW_ADDSPF, true);
     }
 
     private void setLayoutFor(SensorSection layoutFor) {
