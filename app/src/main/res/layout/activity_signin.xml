@@ -135,7 +135,6 @@
             shade:customFont="@string/roboto_bold" />
 
         <com.shades.shade.widgets.ShadeTextView
-            android:id="@+id/signIn_btn_callSup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_two"
@@ -147,6 +146,7 @@
             shade:customFont="@string/roboto_bold" />
 
         <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/signIn_btn_callSup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"

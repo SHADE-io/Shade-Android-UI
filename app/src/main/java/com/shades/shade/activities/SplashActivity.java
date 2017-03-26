@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.shades.shade.R;
+import com.shades.shade.utility.RegisterActivities;
 import com.shades.shade.widgets.ShadeTextView;
 
 public class SplashActivity extends ShadeBaseActivity {
@@ -13,6 +14,7 @@ public class SplashActivity extends ShadeBaseActivity {
 
     @Override
     protected void onUiLayout() {
+        RegisterActivities.registerActivity(this);
         setContentView(R.layout.activity_splash);
         context = SplashActivity.this;
     }
@@ -25,6 +27,7 @@ public class SplashActivity extends ShadeBaseActivity {
 
     @Override
     protected void onDestroy() {
+        RegisterActivities.removeActivity();
         super.onDestroy();
     }
 

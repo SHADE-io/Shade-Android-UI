@@ -2,6 +2,10 @@ package com.shades.shade.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
+import android.text.Html;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -12,8 +16,12 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
+import com.shades.shade.utility.Constant;
+import com.shades.shade.utility.RegisterActivities;
 import com.shades.shade.widgets.ShadeEditText;
 import com.shades.shade.widgets.ShadeTextView;
+
+import java.util.List;
 
 public class SignInActivity extends ShadeBaseActivity {
 
@@ -24,6 +32,7 @@ public class SignInActivity extends ShadeBaseActivity {
 
     @Override
     protected void onUiLayout() {
+        RegisterActivities.registerActivity(this);
         setContentView(R.layout.activity_signin);
         context = SignInActivity.this;
     }
@@ -36,6 +45,7 @@ public class SignInActivity extends ShadeBaseActivity {
 
     @Override
     protected void onDestroy() {
+        RegisterActivities.removeActivity();
         super.onDestroy();
     }
 
@@ -100,9 +110,11 @@ public class SignInActivity extends ShadeBaseActivity {
                 break;
 
             case R.id.signIn_btn_emailSup:
+                emailUs();
                 break;
 
             case R.id.signIn_btn_callSup:
+                callUs();
                 break;
         }
     }
@@ -170,5 +182,36 @@ public class SignInActivity extends ShadeBaseActivity {
     private void goToSignIn() {
         startActivity(new Intent(context, HomeActivity.class));
         overridePendingTransition(0, 0);
+        RegisterActivities.removeAllActivities();
     }
+
+    private void emailUs() {
+        try {
+            final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{Constant.EMAILUS_TO});
+            intent.putExtra(Intent.EXTRA_SUBJECT, Constant.EMAILUS_SUB);
+            intent.putExtra(Intent.EXTRA_TEXT, Constant.EMAILUS_MESSAGE);
+
+            final PackageManager pm = getPackageManager();
+            final List<ResolveInfo> matches = pm.queryIntentActivities(intent, 0);
+            ResolveInfo best = null;
+            for (final ResolveInfo info : matches) {
+                if (info.activityInfo.packageName.endsWith(".gm") || info.activityInfo.name.toLowerCase().contains("gmail"))
+                    best = info;
+                if (best != null)
+                    intent.setClassName(best.activityInfo.packageName, best.activityInfo.name);
+            }
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void callUs() {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + Constant.CALLUS_NO));
+        startActivity(intent);
+    }
+
 }

@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
+import com.shades.shade.utility.RegisterActivities;
 import com.shades.shade.widgets.ShadeEditText;
 import com.shades.shade.widgets.ShadeTextView;
 
@@ -25,6 +26,7 @@ public class SignUpActivity extends ShadeBaseActivity {
 
     @Override
     protected void onUiLayout() {
+        RegisterActivities.registerActivity(this);
         setContentView(R.layout.activity_signup);
         context = SignUpActivity.this;
     }
@@ -37,6 +39,7 @@ public class SignUpActivity extends ShadeBaseActivity {
 
     @Override
     protected void onDestroy() {
+        RegisterActivities.removeActivity();
         super.onDestroy();
     }
 
