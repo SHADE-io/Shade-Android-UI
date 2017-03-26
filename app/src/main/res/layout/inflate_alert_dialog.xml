@@ -12,14 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_twenty"
-        android:background="@color/md_white_1000"
+        android:background="@drawable/abc_popup_background_mtrl_mult"
         android:orientation="vertical"
-        android:padding="@dimen/dp_fifteen">
+        android:padding="@dimen/dp_twenty">
 
         <com.shades.shade.widgets.ShadeTextView
             android:id="@+id/alert_dialog_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_five"
             android:gravity="center"
             android:text="Are you sure you want to cancel\n your sunscreen application?"
             android:textColor="@color/textColor"
@@ -29,7 +30,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_fifteen"
+            android:layout_marginTop="@dimen/dp_twelve"
             android:gravity="right"
             android:orientation="horizontal">
 

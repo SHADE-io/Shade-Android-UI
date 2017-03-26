@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_twenty"
-        android:background="@color/md_white_1000"
+        android:background="@drawable/abc_popup_background_mtrl_mult"
         android:orientation="vertical"
-        android:padding="@dimen/dp_fifteen">
+        android:padding="@dimen/dp_twenty">
 
 
         <LinearLayout

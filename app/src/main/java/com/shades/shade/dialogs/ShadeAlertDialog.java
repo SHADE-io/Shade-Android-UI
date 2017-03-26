@@ -3,8 +3,10 @@ package com.shades.shade.dialogs;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.widget.LinearLayout;
 
 import com.shades.shade.R;
 import com.shades.shade.widgets.ShadeTextView;
@@ -56,7 +58,10 @@ public class ShadeAlertDialog implements DialogInterface, View.OnClickListener {
         dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.inflate_alert_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(context.getResources().getColor(android.R.color.transparent)));
+        Window window = dialog.getWindow();
+        window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        window.setGravity(Gravity.CENTER);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
         ShadeTextView txtMessage = (ShadeTextView) dialog.findViewById(R.id.alert_dialog_message);
         ShadeTextView txtPositiveButton = (ShadeTextView) dialog.findViewById(R.id.alert_dialog_positiveButton);
