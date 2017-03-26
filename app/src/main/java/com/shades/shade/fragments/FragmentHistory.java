@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
+import com.shades.shade.dialogs.UVExposureDialog;
 import com.shades.shade.widgets.ShadeTextView;
 
 
@@ -23,6 +24,7 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
     private ShadeTextView txt_YDailyLimit;
     private ShadeTextView txt_YHighUV;
     private ImageView img_AvgCheckIn;
+    private UVExposureDialog uvExposureDialog = null;
 
     public static FragmentHistory newInstance(int position, Context mContext) {
         FragmentHistory f = new FragmentHistory();
@@ -61,8 +63,30 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.frg_history_imgMenu:
-
+                onOptionMenuClick();
                 break;
         }
+    }
+
+
+    private void onOptionMenuClick() {
+        uvExposureDialog = new UVExposureDialog(context, new UVExposureDialog.UVExposureDialogClickListener() {
+            @Override
+            public void onEditDailyLimitClick() {
+                uvExposureDialog.dismissDialog();
+            }
+
+            @Override
+            public void onZoomInClick() {
+                uvExposureDialog.dismissDialog();
+            }
+
+            @Override
+            public void onZoomOutClick() {
+                uvExposureDialog.dismissDialog();
+            }
+        });
+        uvExposureDialog.prepareDialog();
+        uvExposureDialog.showDialog();
     }
 }

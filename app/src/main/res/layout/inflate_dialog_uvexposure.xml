@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_twenty"
+        android:background="@color/md_white_1000"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_fifteen">
+
+
+        <LinearLayout
+            android:id="@+id/dialog_uvecposure_editDailyLimit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dialog_uvecposure_img_DailyLimit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_checkin" />
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:id="@+id/dialog_uvecposure_txt_DailyLimit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_twenty"
+                android:gravity="center"
+                android:text="Edit Detail Limit"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_mediumx"
+                shade:customFont="@string/roboto_regular" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/dialog_uvecposure_zoomIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_ten"
+            android:layout_marginTop="@dimen/dp_ten"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dialog_uvecposure_img_zoomIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_checkin" />
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:id="@+id/dialog_uvecposure_txt_zoomIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_twenty"
+                android:gravity="center"
+                android:text="Zoom In"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_mediumx"
+                shade:customFont="@string/roboto_regular" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/dialog_uvecposure_zoomOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/dialog_uvecposure_img_zoomOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_checkin" />
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:id="@+id/dialog_uvecposure_txt_zoomOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_twenty"
+                android:gravity="center"
+                android:text="Zoom Out"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_mediumx"
+                shade:customFont="@string/roboto_regular" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
