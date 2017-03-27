@@ -205,6 +205,7 @@ public class SignUpActivity extends ShadeBaseActivity implements EditTextWatcher
         requestFocus(edtText);
         edtText.setVisibility(View.VISIBLE);
         edtText.setText(message);
+        edtText.setSelected(true);
     }
 
 }
