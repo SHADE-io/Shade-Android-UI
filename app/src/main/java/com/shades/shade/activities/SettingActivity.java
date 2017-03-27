@@ -1,6 +1,5 @@
 package com.shades.shade.activities;
 
-import android.app.Application;
 import android.content.Context;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
@@ -88,6 +87,9 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
                 break;
             case R.id.settings_MorningReminder_switch:
                 AppConstant.showSnakeBarShortTIme(parent_layout, "Morning Reminder : " + (b ? "ON" : "OFF"));
+                if (b){
+                    openTimePicker();
+                }
                 break;
             case R.id.settings_EveningReminder_switch:
                 AppConstant.showSnakeBarShortTIme(parent_layout, "Evening Reminder : " + (b ? "ON" : "OFF"));
@@ -127,5 +129,9 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
                 onBackPressed();
             }
         });
+    }
+
+    private void openTimePicker(){
+
     }
 }
