@@ -191,7 +191,7 @@ public class HomeActivity extends ShadeBaseActivity {
                 break;
 
             case ChangePassword:
-                startActivity(new Intent(context, ForgotPasswordActivity.class));
+                startActivity(new Intent(context, ChangePasswordActivity.class));
                 overridePendingTransition(0, 0);
                 break;
 
