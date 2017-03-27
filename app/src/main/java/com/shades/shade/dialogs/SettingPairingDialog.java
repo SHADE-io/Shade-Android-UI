@@ -32,7 +32,7 @@ public class SettingPairingDialog implements DialogInterface, View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.alert_dialog_negetiveButton:
+            case R.id.settings_dialog_negativeButton:
                 if (buttonClickListener != null)
                     buttonClickListener.onNegativeButtonClick();
                 break;
@@ -43,14 +43,13 @@ public class SettingPairingDialog implements DialogInterface, View.OnClickListen
     public void prepareDialog() {
         dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.inflate_alert_dialog);
+        dialog.setContentView(R.layout.inflate_settingspair_dialog);
         Window window = dialog.getWindow();
         window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         window.setGravity(Gravity.CENTER);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-        ShadeTextView txtNegetiveButton = (ShadeTextView) dialog.findViewById(R.id.settings_dialog_negativeButton);
-        txtNegetiveButton.setOnClickListener(this);
+        ((ShadeTextView) dialog.findViewById(R.id.settings_dialog_negativeButton)).setOnClickListener(this);
     }
 
     @Override
