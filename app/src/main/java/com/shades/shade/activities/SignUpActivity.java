@@ -59,7 +59,7 @@ public class SignUpActivity extends ShadeBaseActivity implements EditTextWatcher
         ((ImageView) findViewById(R.id.signUp_img_terms)).setOnClickListener(this);
 
         edt_email.addTextChangedListener(new MyTextWatcher(this,edt_email));
-        edt_password.addTextChangedListener(new MyTextWatcher(this,edt_email));
+        edt_password.addTextChangedListener(new MyTextWatcher(this,edt_password));
 
         edt_password.setOnTouchListener(new View.OnTouchListener() {
             @Override
