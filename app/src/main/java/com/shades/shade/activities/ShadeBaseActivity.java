@@ -24,4 +24,6 @@ public abstract class ShadeBaseActivity extends AppCompatActivity implements Vie
 
     protected abstract void onListenersRemove();
 
+    protected abstract void onInitDataLoad();
+
 }

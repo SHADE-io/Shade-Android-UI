@@ -105,6 +105,11 @@ public class HomeActivity extends ShadeBaseActivity {
         }
     }
 
+    @Override
+    protected void onInitDataLoad() {
+        //TODO After UI Load complete, if you want to do something, do it here
+    }
+
     public void toolbarStatusBar() {
         txt_title = (ShadeTextView) findViewById(R.id.topBar_txt_title);
         batteryStatus = (ImageView) findViewById(R.id.topBar_batteryStatus);

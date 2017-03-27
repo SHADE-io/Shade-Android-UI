@@ -8,6 +8,8 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
+import com.shades.shade.dialogs.DialogButtonClickListener;
+import com.shades.shade.dialogs.SettingPairingDialog;
 import com.shades.shade.utility.AppConstant;
 import com.shades.shade.widgets.ShadeTextView;
 
@@ -19,6 +21,7 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
     private SwitchCompat switchMorningeminder;
     private SwitchCompat switchEveningReminder;
     private ImageView topBar_batteryStatus;
+    private SettingPairingDialog settingPairingDialog;
 
     @Override
     protected void onUiLayout() {
@@ -47,6 +50,7 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
 
         topBar_batteryStatus = (ImageView) findViewById(R.id.topBar_batteryStatus);
         topBar_batteryStatus.setImageResource(R.drawable.battery_full);//Battery statusChange
+
     }
 
     @Override
@@ -60,6 +64,11 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
     @Override
     protected void onListenersRemove() {
 
+    }
+
+    @Override
+    protected void onInitDataLoad() {
+        showPairDialog();
     }
 
     @Override
@@ -84,5 +93,39 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
                 AppConstant.showSnakeBarShortTIme(parent_layout, "Evening Reminder : " + (b ? "ON" : "OFF"));
                 break;
         }
+    }
+
+    private void showPairDialog() {
+        settingPairingDialog = new SettingPairingDialog(context, new DialogButtonClickListener() {
+            @Override
+            public void onPositiveButtonClick() {
+
+            }
+
+            @Override
+            public void onNegativeButtonClick() {
+                settingPairingDialog.dismissDialog();
+            }
+        });
+        settingPairingDialog.prepareDialog();
+        settingPairingDialog.showDialog();
+    }
+
+    private void sensorPairAlert() {
+        AppConstant.showSnakeBar(parent_layout, "For successful pairing, make sure your Shade sensor is nearby and charged.", true, "RETRY", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+    }
+
+    private void sensorConnectedSuccessfully() {
+        AppConstant.showSnakeBar(parent_layout, "Your Shade sensor was successfully paired with your app.", true, "OK", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 }

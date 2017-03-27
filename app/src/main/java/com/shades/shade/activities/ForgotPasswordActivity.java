@@ -60,6 +60,11 @@ public class ForgotPasswordActivity extends ShadeBaseActivity {
     }
 
     @Override
+    protected void onInitDataLoad() {
+        //TODO After UI Load complete, if you want to do something, do it here
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.topBar_btn_back:

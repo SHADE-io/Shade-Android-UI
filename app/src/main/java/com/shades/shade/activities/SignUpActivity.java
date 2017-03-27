@@ -58,8 +58,8 @@ public class SignUpActivity extends ShadeBaseActivity implements EditTextWatcher
         btnSignUp = (ShadeTextView) findViewById(R.id.signUp_btn_signUp);
         ((ImageView) findViewById(R.id.signUp_img_terms)).setOnClickListener(this);
 
-        edt_email.addTextChangedListener(new MyTextWatcher(this,edt_email));
-        edt_password.addTextChangedListener(new MyTextWatcher(this,edt_password));
+        edt_email.addTextChangedListener(new MyTextWatcher(this, edt_email));
+        edt_password.addTextChangedListener(new MyTextWatcher(this, edt_password));
 
         edt_password.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -132,6 +132,11 @@ public class SignUpActivity extends ShadeBaseActivity implements EditTextWatcher
                 break;
         }
 
+    }
+
+    @Override
+    protected void onInitDataLoad() {
+        //TODO After UI Load complete, if you want to do something, do it here
     }
 
     @Override

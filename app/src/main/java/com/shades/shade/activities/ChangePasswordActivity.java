@@ -157,6 +157,11 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
         }
     }
 
+    @Override
+    protected void onInitDataLoad() {
+        //TODO After UI Load complete, if you want to do something, do it here
+    }
+
     private static boolean isValidEmail(String email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
