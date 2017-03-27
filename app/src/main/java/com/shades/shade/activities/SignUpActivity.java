@@ -12,11 +12,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
+import com.shades.shade.interfaces.EditTextWatcherListener;
 import com.shades.shade.utility.RegisterActivities;
+import com.shades.shade.widgets.MyTextWatcher;
 import com.shades.shade.widgets.ShadeEditText;
 import com.shades.shade.widgets.ShadeTextView;
 
-public class SignUpActivity extends ShadeBaseActivity {
+public class SignUpActivity extends ShadeBaseActivity implements EditTextWatcherListener {
 
     private Context context;
     private boolean isShowing = false;
@@ -55,6 +57,9 @@ public class SignUpActivity extends ShadeBaseActivity {
 
         btnSignUp = (ShadeTextView) findViewById(R.id.signUp_btn_signUp);
         ((ImageView) findViewById(R.id.signUp_img_terms)).setOnClickListener(this);
+
+        edt_email.addTextChangedListener(new MyTextWatcher(this,edt_email));
+        edt_password.addTextChangedListener(new MyTextWatcher(this,edt_email));
 
         edt_password.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -109,6 +114,41 @@ public class SignUpActivity extends ShadeBaseActivity {
                 break;
         }
     }
+
+
+    @Override
+    public void onTextChanges(View v) {
+        switch (v.getId()) {
+            case R.id.signUp_edt_email:
+                txtErrorEmail.setText("Use same email used to purchase Shade.");
+                txtErrorEmail.setSelected(false);
+                txtErrorEmail.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.signUp_edt_password:
+                txtErrorPassword.setText("Minimum 8 characters, with 1 non-alphabet character.");
+                txtErrorPassword.setSelected(false);
+                txtErrorPassword.setVisibility(View.VISIBLE);
+                break;
+        }
+
+    }
+
+    @Override
+    public void onTextChangesToZero(View v) {
+        switch (v.getId()) {
+            case R.id.signUp_edt_email:
+                txtErrorEmail.setSelected(true);
+                txtErrorEmail.setVisibility(View.INVISIBLE);
+                break;
+
+            case R.id.signUp_edt_password:
+                txtErrorPassword.setSelected(true);
+                txtErrorPassword.setVisibility(View.INVISIBLE);
+                break;
+        }
+    }
+
 
     private void showPassword() {
         if (edt_password.getText().length() > 0) {

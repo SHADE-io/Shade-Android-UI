@@ -55,7 +55,7 @@
                 android:paddingLeft="@dimen/dp_two"
                 android:paddingTop="-2dp"
                 android:text="@string/signIn_txt_forgotPassword"
-                android:textColor="@color/highlightedColor"
+                android:textColor="@color/error_txt_selector"
                 android:textSize="@dimen/sp_smallxx"
                 android:visibility="invisible"
                 shade:customFont="@string/roboto_regular" />
@@ -82,7 +82,7 @@
                 android:paddingLeft="@dimen/dp_two"
                 android:paddingTop="-2dp"
                 android:text="@string/signIn_txt_forgotPassword"
-                android:textColor="@color/highlightedColor"
+                android:textColor="@color/error_txt_selector"
                 android:textSize="@dimen/sp_smallxx"
                 android:visibility="invisible"
                 shade:customFont="@string/roboto_regular" />

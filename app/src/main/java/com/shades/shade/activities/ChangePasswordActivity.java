@@ -95,7 +95,7 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
             }
         });
 
-        edt_newPassword.addTextChangedListener(new MyTextWatcher(this,edt_newPassword));
+        edt_newPassword.addTextChangedListener(new MyTextWatcher(this, edt_newPassword));
     }
 
     @Override
@@ -136,6 +136,9 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
         switch (v.getId()) {
             case R.id.resetPws_edt_newPassword:
                 btn_save.setSelected(true);
+                txtErrorNewPasw.setText("Minimum 8 characters, with 1 non-alphabet character.");
+                txtErrorNewPasw.setSelected(false);
+                txtErrorNewPasw.setVisibility(View.VISIBLE);
                 break;
         }
 
@@ -146,6 +149,8 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
         switch (v.getId()) {
             case R.id.resetPws_edt_newPassword:
                 btn_save.setSelected(false);
+                txtErrorNewPasw.setSelected(true);
+                txtErrorNewPasw.setVisibility(View.INVISIBLE);
                 break;
         }
     }
@@ -204,6 +209,7 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
         requestFocus(edtText);
         edtText.setVisibility(View.VISIBLE);
         edtText.setText(message);
+        edtText.setSelected(true);
     }
 
     /**
