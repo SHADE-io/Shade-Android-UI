@@ -27,7 +27,7 @@ public class MyTextWatcher implements TextWatcher {
 
         if (editable.length() == 0) {
             if (editTextWatcherListener != null) {
-                editTextWatcherListener.onTextChanges(view);
+                editTextWatcherListener.onTextChangesToZero(view);
             }
         } else {
             if (editTextWatcherListener != null) {

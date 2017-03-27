@@ -9,11 +9,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
+import com.shades.shade.interfaces.EditTextWatcherListener;
 import com.shades.shade.utility.AppConstant;
+import com.shades.shade.widgets.MyTextWatcher;
 import com.shades.shade.widgets.ShadeEditText;
 import com.shades.shade.widgets.ShadeTextView;
 
-public class ChangePasswordActivity extends ShadeBaseActivity {
+public class ChangePasswordActivity extends ShadeBaseActivity implements EditTextWatcherListener {
 
     private Context context;
 
@@ -92,6 +94,8 @@ public class ChangePasswordActivity extends ShadeBaseActivity {
                 return false;
             }
         });
+
+        edt_newPassword.addTextChangedListener(new MyTextWatcher(this,edt_newPassword));
     }
 
     @Override
@@ -123,6 +127,25 @@ public class ChangePasswordActivity extends ShadeBaseActivity {
                 if (!btn_save.isSelected())
                     return;
                 onSubmitButtonEvent();
+                break;
+        }
+    }
+
+    @Override
+    public void onTextChanges(View v) {
+        switch (v.getId()) {
+            case R.id.resetPws_edt_newPassword:
+                btn_save.setSelected(true);
+                break;
+        }
+
+    }
+
+    @Override
+    public void onTextChangesToZero(View v) {
+        switch (v.getId()) {
+            case R.id.resetPws_edt_newPassword:
+                btn_save.setSelected(false);
                 break;
         }
     }
@@ -212,5 +235,4 @@ public class ChangePasswordActivity extends ShadeBaseActivity {
             }
         });
     }
-
 }
