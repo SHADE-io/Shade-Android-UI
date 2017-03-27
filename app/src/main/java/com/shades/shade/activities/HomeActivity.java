@@ -179,6 +179,8 @@ public class HomeActivity extends ShadeBaseActivity {
     private void onRecyclerItemClickerListner(int childAdapterPosition) {
         switch (AppConstant.DrawerItems.values()[childAdapterPosition]) {
             case Settings:
+                startActivity(new Intent(context, SettingActivity.class));
+                overridePendingTransition(0, 0);
                 break;
 
             case ChatWithUs:

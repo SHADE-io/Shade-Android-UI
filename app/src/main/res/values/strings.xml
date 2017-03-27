@@ -96,6 +96,22 @@
     <string name="dialog_nButton_No">NO</string>
 
     <!-- ResetPassword -->
+    <string name="changePassword_title">Change Password</string>
     <string name="resetPassword_edt_hint_oldpassword">Current Password</string>
     <string name="resetPassword_edt_hint_newpassword">New Password</string>
+
+    <!-- ResetPassword -->
+    <string name="settings_title">Setting</string>
+    <string name="settings_pair_title">Pair Sensor</string>
+    <string name="settings_pair_desc">You need to pair your sensor only once.</string>
+    <string name="settings_softwareUpdate_title">Sensor Software Update</string>
+    <string name="settings_softwareUpdate_desc">Sensor Software version 1.4.3 is up to date. </string>
+    <string name="settings_sensorCoveredNotification_title">Sensor Covered Notification</string>
+    <string name="settings_sensorCoveredNotification_desc">You may disable your sensor from vibrating when it is covered. Vibration is automatically re-enabled at midnight.</string>
+    <string name="settings_MorningReminder_title">Morning Reminder</string>
+    <string name="settings_MorningReminder_desc">6:30 AM</string>
+    <string name="settings_EveningReminder_title">Evening Reminder</string>
+    <string name="settings_EveningReminder_desc">Reminder to check in nightly.</string>
+
+
 </resources>

@@ -18,4 +18,9 @@ public class AppConstant {
         }
         snackbar.show();
     }
+
+    public static void showSnakeBarShortTIme(View view, String message) {
+        Snackbar snackbar = Snackbar.make(view, message, Snackbar.LENGTH_SHORT);
+        snackbar.show();
+    }
 }

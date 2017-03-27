@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white_1000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/include_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <include
+            layout="@layout/include_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/topBar_batteryStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_eight"
+            android:scaleType="centerInside"
+            android:src="@drawable/battery_full" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_five"
+        android:background="@drawable/dropshadow" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbarThumbVertical="@drawable/scrollbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Pair -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/settings_pair_sensor_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/settings_pair_title"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sp_mediumxx"
+                    shade:customFont="@string/roboto_regular" />
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/settings_pair_sensor_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/settings_pair_desc"
+                    android:textColor="@color/md_grey_600"
+                    android:textSize="@dimen/sp_medium"
+                    shade:customFont="@string/roboto_regular" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/textColor" />
+
+            <!-- Software Update -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/settings_softwareUpdate_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/settings_softwareUpdate_title"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sp_mediumxx"
+                    shade:customFont="@string/roboto_regular" />
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/settings_softwareUpdate_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/settings_softwareUpdate_desc"
+                    android:textColor="@color/md_grey_600"
+                    android:textSize="@dimen/sp_medium"
+                    shade:customFont="@string/roboto_regular" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/textColor" />
+
+            <!-- Sensor Notification -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_five"
+                    android:paddingTop="@dimen/dp_eight">
+
+                    <com.shades.shade.widgets.ShadeTextView
+                        android:id="@+id/settings_sensorCoveredNotification_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/settings_sensorCoveredNotification_title"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_mediumxx"
+                        shade:customFont="@string/roboto_regular" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/settings_sensorCoveredNotification_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/settings_sensorCoveredNotification_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_sensorCoveredNotification_desc"
+                    android:textColor="@color/md_grey_600"
+                    android:textSize="@dimen/sp_medium"
+                    shade:customFont="@string/roboto_regular" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/textColor" />
+
+            <!-- Morning Notification -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_two"
+                    android:paddingTop="@dimen/dp_eight">
+
+                    <com.shades.shade.widgets.ShadeTextView
+                        android:id="@+id/settings_morningReminder_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/settings_MorningReminder_title"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_mediumxx"
+                        shade:customFont="@string/roboto_regular" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/settings_MorningReminder_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/settings_MorningReminder_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_MorningReminder_desc"
+                    android:textColor="@color/md_grey_600"
+                    android:textSize="@dimen/sp_medium"
+                    shade:customFont="@string/roboto_regular" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/textColor" />
+
+
+            <!-- Sensor Notification -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_twelve">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_two"
+                    android:paddingTop="@dimen/dp_eight">
+
+                    <com.shades.shade.widgets.ShadeTextView
+                        android:id="@+id/settings_EveningReminder_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/settings_EveningReminder_title"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_mediumxx"
+                        shade:customFont="@string/roboto_regular" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/settings_EveningReminder_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <com.shades.shade.widgets.ShadeTextView
+                    android:id="@+id/settings_EveningReminder_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_EveningReminder_desc"
+                    android:textColor="@color/md_grey_600"
+                    android:textSize="@dimen/sp_medium"
+                    shade:customFont="@string/roboto_regular" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

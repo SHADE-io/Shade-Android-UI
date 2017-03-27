@@ -53,7 +53,7 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
     @Override
     protected void onUiComponentInit() {
 
-        ((ShadeTextView) findViewById(R.id.topBar_txt_title)).setText(getString(R.string.forgotPsw_title));
+        ((ShadeTextView) findViewById(R.id.topBar_txt_title)).setText(getString(R.string.changePassword_title));
         parent_layout = findViewById(R.id.parent_layout);
 
         edt_email = (ShadeEditText) findViewById(R.id.resetPws_edt_email);
@@ -63,7 +63,18 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
         txtErrorEmail = (ShadeTextView) findViewById(R.id.resetPws_error_email_message);
         txtErrorPsw = (ShadeTextView) findViewById(R.id.resetPws_error_password_message);
         txtErrorNewPasw = (ShadeTextView) findViewById(R.id.resetPws_error_newPassword_message);
+
         topBar_batteryStatus = (ImageView) findViewById(R.id.topBar_batteryStatus);
+        topBar_batteryStatus.setImageResource(R.drawable.battery_full);//Battery statusChange
+
+    }
+
+    @Override
+    protected void onListenersInit() {
+        ((ImageView) findViewById(R.id.topBar_btn_back)).setOnClickListener(this);
+        ((ShadeTextView) findViewById(R.id.resetPws_btn_cancel)).setOnClickListener(this);
+        btn_save = (ShadeTextView) findViewById(R.id.resetPws_btn_save);
+        btn_save.setOnClickListener(this);
 
         edt_oldPassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -96,15 +107,6 @@ public class ChangePasswordActivity extends ShadeBaseActivity implements EditTex
         });
 
         edt_newPassword.addTextChangedListener(new MyTextWatcher(this, edt_newPassword));
-    }
-
-    @Override
-    protected void onListenersInit() {
-        ((ImageView) findViewById(R.id.topBar_btn_back)).setOnClickListener(this);
-        ((ShadeTextView) findViewById(R.id.resetPws_btn_cancel)).setOnClickListener(this);
-        btn_save = (ShadeTextView) findViewById(R.id.resetPws_btn_save);
-        btn_save.setOnClickListener(this);
-
     }
 
     @Override
