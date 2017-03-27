@@ -14,6 +14,7 @@ public abstract class ShadeBaseActivity extends AppCompatActivity implements Vie
         onUiLayout();
         onUiComponentInit();
         onListenersInit();
+        onInitDataLoad();
     }
 
     protected abstract void onUiLayout();
