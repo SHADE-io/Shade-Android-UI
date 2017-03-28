@@ -28,6 +28,15 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         VIEW_HISTORY, DAILY_LIMIT, SENSOR_NOT_DETECTING, BLUETOOTH_OFF, TROUBLE_DETECTING, PAIR_SENSOR, WEAR_SHADE, OVER_DAILY_LIMIT, MORE_THEN_HR
     }
 
+    private enum DashboardState {
+        DASHBOARD_NOT_PAIRED, DASHBOARD_FIRST_DAY_USE, DASHBOARD_DAILY_LIMIT_NOT_SET, DASHBOARD_NO_UV, DASHBOARD_NORMAL, DASHBOARD_OVER_DAILY_LIMIT
+    }
+    private enum BluetoothState {
+        BLUETOOTH_OFF, BLUETOOTH_NOT_CONNECTED, BLUETOOTH_CONNECTED
+    }
+    private DashboardState dashboardState = DashboardState.DASHBOARD_NOT_PAIRED;
+    private BluetoothState bluetoothState = BluetoothState.BLUETOOTH_CONNECTED;
+
     private enum SPF {
         SHOW_ADDSPF, SHOW_SPF_APPLY, SHOW_SPF_TIMER
     }
@@ -76,7 +85,8 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         spf_btn_add = (ShadeTextView) v.findViewById(R.id.frg_spf_btn_add);
 
         //Test Data
-        setLayoutFor(SensorSection.PAIR_SENSOR);
+        setLayoutForTopCard();
+//        setLayoutFor(SensorSection.PAIR_SENSOR);
 //        setLayoutFor(SensorSection.VIEW_HISTORY);
 //        setLayoutFor(SensorSection.DAILY_LIMIT);
 //        setLayoutFor(SensorSection.SENSOR_NOT_DETECTING);
@@ -89,6 +99,49 @@ public class FragmentDashboard extends Fragment implements View.OnClickListener 
         showAccumulativeUnit(46f);
 
         setLayoutForSPF(SPF.SHOW_ADDSPF, true);
+    }
+
+    //TODO: Implement this function to show the top card
+    private void setLayoutForTopCard() {
+        if (dashboardState == DashboardState.DASHBOARD_NOT_PAIRED) {
+            setLayoutFor(SensorSection.PAIR_SENSOR);
+        } else if (dashboardState == DashboardState.DASHBOARD_FIRST_DAY_USE) {
+            setLayoutFor(SensorSection.WEAR_SHADE);
+            if (bluetoothState == BluetoothState.BLUETOOTH_OFF) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.BLUETOOTH_OFF
+            } else if (bluetoothState == BluetoothState.BLUETOOTH_NOT_CONNECTED) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.TROUBLE_DETECTING
+            }
+        } else if (dashboardState == DashboardState.DASHBOARD_DAILY_LIMIT_NOT_SET) {
+            setLayoutFor(SensorSection.VIEW_HISTORY);
+            if (bluetoothState == BluetoothState.BLUETOOTH_OFF) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.BLUETOOTH_OFF
+            } else if (bluetoothState == BluetoothState.BLUETOOTH_NOT_CONNECTED) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.TROUBLE_DETECTING
+            }
+        } else if (dashboardState == DashboardState.DASHBOARD_NO_UV) {
+            setLayoutFor(SensorSection.DAILY_LIMIT);
+            if (bluetoothState == BluetoothState.BLUETOOTH_OFF) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.BLUETOOTH_OFF
+            } else if (bluetoothState == BluetoothState.BLUETOOTH_NOT_CONNECTED) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.TROUBLE_DETECTING
+            } else {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.SENSOR_NOT_DETECTING
+            }
+        } else if (dashboardState == DashboardState.DASHBOARD_NORMAL || dashboardState == DashboardState.DASHBOARD_OVER_DAILY_LIMIT) {
+            setLayoutFor(SensorSection.DAILY_LIMIT);
+            if (bluetoothState == BluetoothState.BLUETOOTH_OFF) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.BLUETOOTH_OFF
+            } else if (bluetoothState == BluetoothState.BLUETOOTH_NOT_CONNECTED) {
+                // TODO: Add right arrow and underlying card with layout for SensorSection.TROUBLE_DETECTING
+            } else {
+                if (dashboardState == DashboardState.DASHBOARD_OVER_DAILY_LIMIT) {
+                    //TODO: Add right arrow and underlying card with layout for SensorSection.OVER_DAILY_LIMIT
+                } else {
+                    //TODO: Add right arrow and underlying card with layout for SensorSection.MORE_THEN_HR
+                }
+            }
+        }
     }
 
     private void setLayoutFor(SensorSection layoutFor) {
