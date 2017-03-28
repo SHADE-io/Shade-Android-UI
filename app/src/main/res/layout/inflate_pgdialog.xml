@@ -14,10 +14,15 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
+
+        <ProgressBar
             android:layout_width="@dimen/dp_forty"
             android:layout_height="@dimen/dp_forty"
-            android:src="@drawable/icon_device" />
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/pg_animation"
+            android:indeterminateDuration="1500" />
 
         <com.shades.shade.widgets.ShadeTextView
             android:layout_width="wrap_content"
