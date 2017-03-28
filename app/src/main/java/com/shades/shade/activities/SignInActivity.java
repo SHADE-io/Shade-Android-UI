@@ -13,6 +13,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
+import com.shades.shade.dialogs.ShadeProgressDialog;
+import com.shades.shade.networkcall.LoginTask;
 import com.shades.shade.utility.Constant;
 import com.shades.shade.utility.RegisterActivities;
 import com.shades.shade.widgets.ShadeEditText;
@@ -171,7 +173,20 @@ public class SignInActivity extends ShadeBaseActivity {
         } else {
             txtErrorPassword.setVisibility(View.INVISIBLE);
         }
-        goToSignIn();
+
+        LoginTask loginTask = new LoginTask(context);
+        loginTask.setLoginTaskListener(new LoginTask.LoginTaskListener() {
+            @Override
+            public void onSuccess() {
+                goToSignIn();
+            }
+
+            @Override
+            public void onFail() {
+
+            }
+        });
+        loginTask.processTask(loginTask.postData(strEmail, strPassword));
     }
 
 
