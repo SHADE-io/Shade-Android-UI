@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.shades.shade.R;
@@ -17,6 +18,13 @@ public class UVExposureDialog implements DialogInterface, View.OnClickListener {
     private Dialog dialog;
 
     private UVExposureDialogClickListener buttonClickListener;
+    private LinearLayout editDailyLimit;
+    private LinearLayout zoomIn;
+    private LinearLayout zoomOut;
+    private ImageView img_zoomIn;
+    private ImageView img_zoomOut;
+
+    private static boolean isZoomIn = false;
 
 
     /**
@@ -36,10 +44,14 @@ public class UVExposureDialog implements DialogInterface, View.OnClickListener {
                     buttonClickListener.onEditDailyLimitClick();
                 break;
             case R.id.dialog_uvecposure_zoomIn:
+                isZoomIn = true;
+                zoomIn_Out();
                 if (buttonClickListener != null)
                     buttonClickListener.onZoomInClick();
                 break;
             case R.id.dialog_uvecposure_zoomOut:
+                isZoomIn = false;
+                zoomIn_Out();
                 if (buttonClickListener != null)
                     buttonClickListener.onZoomOutClick();
                 break;
@@ -52,17 +64,22 @@ public class UVExposureDialog implements DialogInterface, View.OnClickListener {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.inflate_dialog_uvexposure);
         Window window = dialog.getWindow();
-        window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         window.setGravity(Gravity.CENTER);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-        LinearLayout editDailyLimit = (LinearLayout) dialog.findViewById(R.id.dialog_uvecposure_editDailyLimit);
-        LinearLayout zoomIn = (LinearLayout) dialog.findViewById(R.id.dialog_uvecposure_zoomIn);
-        LinearLayout zoomOut = (LinearLayout) dialog.findViewById(R.id.dialog_uvecposure_zoomOut);
+        editDailyLimit = (LinearLayout) dialog.findViewById(R.id.dialog_uvecposure_editDailyLimit);
+        zoomIn = (LinearLayout) dialog.findViewById(R.id.dialog_uvecposure_zoomIn);
+        zoomOut = (LinearLayout) dialog.findViewById(R.id.dialog_uvecposure_zoomOut);
+
+        img_zoomIn = (ImageView) dialog.findViewById(R.id.dialog_uvecposure_img_zoomIn);
+        img_zoomOut = (ImageView) dialog.findViewById(R.id.dialog_uvecposure_img_zoomOut);
 
         editDailyLimit.setOnClickListener(this);
         zoomIn.setOnClickListener(this);
         zoomOut.setOnClickListener(this);
+
+        zoomIn_Out();
 
     }
 
@@ -77,6 +94,22 @@ public class UVExposureDialog implements DialogInterface, View.OnClickListener {
         if (dialog != null) {
             dialog.dismiss();
             dialog = null;
+        }
+    }
+
+    private void zoomIn_Out() {
+        if (isZoomIn) {
+            img_zoomIn.setSelected(true);
+            zoomIn.setSelected(true);
+            img_zoomOut.setSelected(false);
+            zoomOut.setSelected(false);
+            isZoomIn = true;
+        } else {
+            img_zoomIn.setSelected(false);
+            zoomIn.setSelected(false);
+            img_zoomOut.setSelected(true);
+            zoomOut.setSelected(true);
+            isZoomIn = false;
         }
     }
 

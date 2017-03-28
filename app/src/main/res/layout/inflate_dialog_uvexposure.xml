@@ -22,13 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_ten">
 
             <ImageView
                 android:id="@+id/dialog_uvecposure_img_DailyLimit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_checkin" />
+                android:src="@drawable/icon_edit_active" />
 
             <com.shades.shade.widgets.ShadeTextView
                 android:id="@+id/dialog_uvecposure_txt_DailyLimit"
@@ -47,16 +48,15 @@
             android:id="@+id/dialog_uvecposure_zoomIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp_ten"
-            android:layout_marginTop="@dimen/dp_ten"
             android:gravity="left|center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_ten">
 
             <ImageView
                 android:id="@+id/dialog_uvecposure_img_zoomIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_checkin" />
+                android:src="@drawable/selector_scal_in" />
 
             <com.shades.shade.widgets.ShadeTextView
                 android:id="@+id/dialog_uvecposure_txt_zoomIn"
@@ -65,7 +65,7 @@
                 android:layout_marginLeft="@dimen/dp_twenty"
                 android:gravity="center"
                 android:text="Zoom In"
-                android:textColor="@color/textColor"
+                android:textColor="@color/menu_selector"
                 android:textSize="@dimen/sp_mediumx"
                 shade:customFont="@string/roboto_regular" />
         </LinearLayout>
@@ -76,14 +76,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_ten">
 
 
             <ImageView
                 android:id="@+id/dialog_uvecposure_img_zoomOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_checkin" />
+                android:src="@drawable/selector_scal_out" />
 
             <com.shades.shade.widgets.ShadeTextView
                 android:id="@+id/dialog_uvecposure_txt_zoomOut"
@@ -92,7 +93,7 @@
                 android:layout_marginLeft="@dimen/dp_twenty"
                 android:gravity="center"
                 android:text="Zoom Out"
-                android:textColor="@color/textColor"
+                android:textColor="@color/menu_selector"
                 android:textSize="@dimen/sp_mediumx"
                 shade:customFont="@string/roboto_regular" />
         </LinearLayout>
