@@ -29,7 +29,7 @@
 
                 <!--<include layout="@layout/inflate_dashboard_viewhistory" />-->
                 <!--<include layout="@layout/inflate_dashboard_dailylimit" />-->
-                <include layout="@layout/inflate_dashboard_sensor_notdetecting" />
+                <!--<include layout="@layout/inflate_dashboard_sensor_notdetecting" />-->
 
             </RelativeLayout>
 
