@@ -48,7 +48,7 @@ public class LoginTask {
             try {
                 //THIS FOR TEST ONLY
                 //TODO WITH *** postBody
-                Thread.sleep(6000);
+                Thread.sleep(3000);
                 isAPICallSuccess = true;
             } catch (InterruptedException e) {
                 e.printStackTrace();

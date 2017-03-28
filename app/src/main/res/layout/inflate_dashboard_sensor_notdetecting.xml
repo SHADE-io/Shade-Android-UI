@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:paddingBottom="@dimen/dp_five"
-        android:paddingRight="@dimen/dp_five"
-        android:paddingTop="@dimen/dp_five"
+        android:paddingBottom="@dimen/dp_ten"
+        android:paddingRight="@dimen/dp_ten"
+        android:paddingTop="@dimen/dp_ten"
         android:src="@drawable/chevron_left" />
 </RelativeLayout>
