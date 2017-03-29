@@ -340,7 +340,7 @@
 
             <!-- All Data -->
             <LinearLayout
-                android:id="@+id/frg_toDayExposureLayout"
+                android:id="@+id/frg_history_allData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_ten"

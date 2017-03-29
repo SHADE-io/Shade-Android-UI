@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_eight"
+        android:paddingTop="@dimen/dp_eight">
+        <!-- Icon Set -->
+
+        <RelativeLayout
+            android:id="@+id/alldata_icon_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_twelve">
+
+                <ImageView
+                    android:id="@+id/alldata_grp_smileyIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_two"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/alldata_emoji_4"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/alldata_grp_noteIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_two"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/alldata_noteicon"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/alldata_grp_noDataIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/dp_two"
+                android:scaleType="centerInside"
+                android:src="@drawable/alldata_nodataicon"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+
+        <!-- Data Set -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/alldata_grp_indicator"
+            android:layout_toRightOf="@+id/alldata_icon_layout"
+            android:orientation="vertical">
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:id="@+id/alldata_child_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_two"
+                android:text="This is a longer note about things that are bothering me like my terrible symptoms. I have had joint pain in my wrists and I need to take meds, wear a wrist guard. Designing on the trackpad doesn’t help."
+                android:textColor="#54000000"
+                android:textSize="@dimen/sp_mediumx"
+                shade:customFont="@string/roboto_regular" />
+        </LinearLayout>
+
+        <!-- Indicator -->
+
+        <ImageView
+            android:id="@+id/alldata_grp_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp_twelve"
+            android:visibility="invisible"
+            android:scaleType="centerInside"
+            android:src="@drawable/chevron_down" />
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/alldata_lowerLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/textColor"
+        android:visibility="gone" />
+
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/alldata_upperLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/textColor"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_eight"
+        android:paddingTop="@dimen/dp_eight">
+        <!-- Icon Set -->
+
+        <RelativeLayout
+            android:id="@+id/alldata_icon_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_twelve">
+
+                <ImageView
+                    android:id="@+id/alldata_grp_smileyIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_two"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/alldata_emoji_4"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/alldata_grp_noteIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_two"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/alldata_noteicon"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/alldata_grp_noDataIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/dp_two"
+                android:scaleType="centerInside"
+                android:src="@drawable/alldata_nodataicon"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+
+        <!-- Data Set -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/alldata_grp_indicator"
+            android:layout_toRightOf="@+id/alldata_icon_layout"
+            android:orientation="vertical">
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:id="@+id/alldata_grp_UvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="00.0 UV Units"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_mediumxx"
+                shade:customFont="@string/roboto_regular" />
+
+            <com.shades.shade.widgets.ShadeTextView
+                android:id="@+id/alldata_grp_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_two"
+                android:singleLine="true"
+                android:text="March 16, 2017"
+                android:textColor="#54000000"
+                android:textSize="@dimen/sp_mediumx"
+                shade:customFont="@string/roboto_regular" />
+        </LinearLayout>
+
+        <!-- Indicator -->
+
+        <ImageView
+            android:id="@+id/alldata_grp_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp_twelve"
+            android:scaleType="centerInside"
+            android:src="@drawable/chevron_down" />
+    </RelativeLayout>
+
+
+</LinearLayout>

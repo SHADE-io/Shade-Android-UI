@@ -2,14 +2,18 @@
 package com.shades.shade.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.shades.shade.R;
+import com.shades.shade.activities.AllDataActivity;
+import com.shades.shade.activities.ChangePasswordActivity;
 import com.shades.shade.dialogs.UVExposureDialog;
 import com.shades.shade.widgets.ShadeTextView;
 
@@ -42,6 +46,8 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
     private void setupView(View v) {
         context = getActivity();
         ((ImageView) v.findViewById(R.id.frg_history_imgMenu)).setOnClickListener(this);
+
+        ((LinearLayout) v.findViewById(R.id.frg_history_allData)).setOnClickListener(this);
         dailyLimit = (ShadeTextView) v.findViewById(R.id.frg_history_dailyLimit);
         txt_TotalDays = (ShadeTextView) v.findViewById(R.id.frg_history_txt_TotalDays);
         txt_AvgDays = (ShadeTextView) v.findViewById(R.id.frg_history_txt_AvgDays);
@@ -64,6 +70,10 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.frg_history_imgMenu:
                 onOptionMenuClick();
+                break;
+            case R.id.frg_history_allData:
+                getActivity().startActivity(new Intent(context, AllDataActivity.class));
+                getActivity().overridePendingTransition(0, 0);
                 break;
         }
     }

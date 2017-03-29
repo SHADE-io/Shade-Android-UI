@@ -113,5 +113,7 @@
     <string name="settings_EveningReminder_title">Evening Reminder</string>
     <string name="settings_EveningReminder_desc">Reminder to check in nightly.</string>
 
+    <!-- All Data -->
+    <string name="allData_title">All Data</string>
 
 </resources>
