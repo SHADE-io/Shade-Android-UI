@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/dp_five"
             android:paddingRight="@dimen/dp_five"
-            android:paddingTop="@dimen/dp_five"
+            android:paddingTop="@dimen/dp_ten"
             android:text="Loading..."
             android:textColor="@color/logo_colorB"
             android:textSize="@dimen/sp_mediumxx"
