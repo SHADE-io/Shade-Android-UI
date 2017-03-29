@@ -83,12 +83,15 @@ public class AllDataExpAdapter extends BaseExpandableListAdapter {
         if (dataSet.isHasNote() && dataSet.isHasSmiley()) {
             grpViewHolder.img_smileyIcon.setVisibility(View.VISIBLE);
             grpViewHolder.img_note.setVisibility(View.VISIBLE);
+            grpViewHolder.img_noData.setVisibility(View.INVISIBLE);
         } else if (dataSet.isHasNote()) {
             grpViewHolder.img_smileyIcon.setVisibility(View.INVISIBLE);
             grpViewHolder.img_note.setVisibility(View.VISIBLE);
+            grpViewHolder.img_noData.setVisibility(View.INVISIBLE);
         } else if (dataSet.isHasSmiley()) {
             grpViewHolder.img_smileyIcon.setVisibility(View.VISIBLE);
             grpViewHolder.img_note.setVisibility(View.INVISIBLE);
+            grpViewHolder.img_noData.setVisibility(View.INVISIBLE);
         } else {
             grpViewHolder.img_smileyIcon.setVisibility(View.INVISIBLE);
             grpViewHolder.img_note.setVisibility(View.INVISIBLE);
