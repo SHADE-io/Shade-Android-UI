@@ -200,6 +200,8 @@ public class HomeActivity extends ShadeBaseActivity {
                 break;
 
             case LegalInformation:
+                startActivity(new Intent(context, LegalInfoActivity.class));
+                overridePendingTransition(0, 0);
                 break;
 
             case ChangePassword:

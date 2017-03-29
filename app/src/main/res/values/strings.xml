@@ -23,6 +23,24 @@
         <item>@drawable/icon_acct</item>
     </array>
 
+    <string-array name="legalInfo">
+        <item>Terms of Service</item>
+        <item>Privacy Policy</item>
+        <item>Safety Instructions</item>
+        <item>Returns &amp; Warranty</item>
+        <item>Terms of Sale</item>
+        <item>Copyright Policy</item>
+        <item>Conflict of Interest Policy</item>
+    </string-array>
+    <string-array name="legalInfoLink">
+        <item>https://dev.wearshade.com/terms_and_conditions</item>
+        <item>https://dev.wearshade.com/privacy_policy</item>
+        <item>https://dev.wearshade.com/safety_instructions</item>
+        <item>https://dev.wearshade.com/device_warranty</item>
+        <item>https://dev.wearshade.com/terms_of_sale</item>
+        <item>https://dev.wearshade.com/copyright_policy</item>
+        <item>https://dev.wearshade.com/conflict_of_interest</item>
+    </string-array>
 
     <!-- Font -->
     <string name="roboto_light">fonts/Roboto-Light.ttf</string>

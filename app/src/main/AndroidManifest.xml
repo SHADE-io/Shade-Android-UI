@@ -49,6 +49,10 @@
             android:name=".activities.AllDataActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activities.LegalInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

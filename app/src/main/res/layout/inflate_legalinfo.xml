@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.shades.shade.widgets.ShadeTextView
+        android:id="@+id/legalInfo_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|left"
+        android:padding="@dimen/dp_fifteen"
+        android:text="Terms of Service"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/sp_mediumxx"
+        shade:customFont="@string/roboto_regular" />
+</LinearLayout>
