@@ -75,8 +75,10 @@ public class AllDataExpAdapter extends BaseExpandableListAdapter {
 
 
         AllDataSet dataSet = listData.get(grpIndex);
-        grpViewHolder.img_Indicator.setImageResource(isExpanded ? R.drawable.chevron_up : R.drawable.chevron_down);
-        grpViewHolder.line.setVisibility((isExpanded && listData.get(grpIndex).getNotes() != null && listData.get(grpIndex).getNotes().size() != 0) ? View.VISIBLE : View.GONE);
+
+        boolean isExpandNeeded = (isExpanded && listData.get(grpIndex).getNotes() != null && listData.get(grpIndex).getNotes().size() != 0);
+        grpViewHolder.img_Indicator.setImageResource(isExpandNeeded ? R.drawable.chevron_up : R.drawable.chevron_down);
+        grpViewHolder.line.setVisibility(isExpandNeeded ? View.VISIBLE : View.GONE);
 
         if (dataSet.isHasNote() && dataSet.isHasSmiley()) {
             grpViewHolder.img_smileyIcon.setVisibility(View.VISIBLE);
@@ -90,7 +92,7 @@ public class AllDataExpAdapter extends BaseExpandableListAdapter {
         } else {
             grpViewHolder.img_smileyIcon.setVisibility(View.INVISIBLE);
             grpViewHolder.img_note.setVisibility(View.INVISIBLE);
-            grpViewHolder.img_noData.setVisibility(View.INVISIBLE);
+            grpViewHolder.img_noData.setVisibility(View.VISIBLE);
         }
         grpViewHolder.txt_uv.setText((TextUtils.isEmpty(dataSet.getUvUnit())) ? "No UV" : dataSet.getUvUnit() + "UV Units");
         grpViewHolder.txt_date.setText(dataSet.getDate());
