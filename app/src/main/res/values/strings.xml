@@ -112,7 +112,7 @@
     <string name="dialog_message_exit">Are you sure you want to cancel\n your sunscreen application?</string>
     <string name="dialog_pButton_Yes">YES</string>
     <string name="dialog_nButton_No">NO</string>
-    <string name="dialog_logout">Are you sure, you want to logout from app?</string>
+    <string name="dialog_logout">Are you sure, you want to logout \nfrom this app?</string>
 
     <!-- ResetPassword -->
     <string name="changePassword_title">Change Password</string>
