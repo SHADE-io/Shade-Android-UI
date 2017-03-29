@@ -309,8 +309,8 @@ public class HomeActivity extends ShadeBaseActivity {
     }
 
     private void onLogout() {
-        dialog = new ShadeAlertDialog(context, getString(R.string.dialog_message_exit),
-                getString(R.string.dialog_pButton_Yes), getString(R.string.dialog_logout), new DialogButtonClickListener() {
+        dialog = new ShadeAlertDialog(context, getString(R.string.dialog_logout),
+                getString(R.string.dialog_pButton_Yes), getString(R.string.dialog_nButton_No), new DialogButtonClickListener() {
             @Override
             public void onPositiveButtonClick() {
                 dialog.dismissDialog();
