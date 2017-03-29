@@ -40,7 +40,7 @@
         android:id="@+id/info_ListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/textColor"
+        android:divider="@color/md_grey_500"
         android:dividerHeight="0.2dp"
         android:scrollbarThumbVertical="@drawable/scrollbar" />
 </LinearLayout>
