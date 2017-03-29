@@ -17,10 +17,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.shades.shade.R;
 import com.shades.shade.adapters.DrawerAdapter;
@@ -58,6 +61,7 @@ public class HomeActivity extends ShadeBaseActivity {
     private FragmentCheckIn frgCheckIn;
 
     private ShadeAlertDialog dialog;
+    public RelativeLayout layoutMain;
 
     @Override
     public void onBackPressed() {
@@ -111,6 +115,7 @@ public class HomeActivity extends ShadeBaseActivity {
     }
 
     public void toolbarStatusBar() {
+        layoutMain = (RelativeLayout) findViewById(R.id.layoutMain);
         txt_title = (ShadeTextView) findViewById(R.id.topBar_txt_title);
         batteryStatus = (ImageView) findViewById(R.id.topBar_batteryStatus);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -227,6 +232,8 @@ public class HomeActivity extends ShadeBaseActivity {
             @Override
             public void onPageSelected(int position) {
                 txt_title.setText(TITLES[position]);
+                if (position < TITLES.length - 1)
+                    showCheckInContextMenu(false);
             }
 
             @Override
@@ -296,5 +303,42 @@ public class HomeActivity extends ShadeBaseActivity {
         });
         dialog.prepareDialog();
         dialog.showDialog();
+    }
+
+    public void showCheckInContextMenu(boolean needToShow) {
+        if (!needToShow) {
+            if (layoutMain.getChildCount() == 2) {
+                layoutMain.removeViewAt(1);
+            }
+            return;
+        }
+
+        if (layoutMain.getChildCount() >= 2) {
+            layoutMain.removeViewAt(1);
+        }
+        View topBarCheckIn = LayoutInflater.from(context).inflate(R.layout.include_topbar_checkin, null);
+        topBarCheckIn.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+
+        topBarCheckIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        (topBarCheckIn.findViewById(R.id.topBar_btn_cross)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCheckInContextMenu(false);
+            }
+        });
+        (topBarCheckIn.findViewById(R.id.topBar_btn_save)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (frgCheckIn != null)
+                    frgCheckIn.saveDataCall();
+            }
+        });
+        layoutMain.addView(topBarCheckIn);
+
     }
 }

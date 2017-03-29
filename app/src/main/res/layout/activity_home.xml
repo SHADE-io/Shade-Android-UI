@@ -8,18 +8,23 @@
 
 
     <!-- Dashboard Panel -->
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/layoutMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/include_topbar_toolbar" />
-        <include
-            layout="@layout/include_home_main" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/include_topbar_toolbar" />
+
+            <include layout="@layout/include_home_main" />
+        </LinearLayout>
+    </RelativeLayout>
 
 
     <!-- Drawer Panel -->

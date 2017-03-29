@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shade="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/md_white_1000">
+
+
+    <LinearLayout
+        android:id="@+id/layout_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_forty"
+            android:background="@android:color/black" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/layout_x"
+        android:layout_alignTop="@+id/layout_x"
+        android:background="@color/md_white_1000">
+
+
+        <ImageView
+            android:id="@+id/topBar_btn_cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp_ten"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_cross" />
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/topBar_txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_fifteen"
+            android:layout_toRightOf="@+id/topBar_btn_cross"
+            android:text="Check In"
+            android:textColor="@color/textColor_signin_tiitle"
+            android:textSize="@dimen/sp_mediumxx"
+            shade:customFont="@string/roboto_medium" />
+
+
+        <com.shades.shade.widgets.ShadeTextView
+            android:id="@+id/topBar_btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/dp_fifteen"
+            android:text="SAVE"
+            android:textColor="@color/highlightedColor"
+            android:textSize="@dimen/sp_mediumxx"
+            shade:customFont="@string/roboto_medium" />
+    </RelativeLayout>
+</RelativeLayout>
