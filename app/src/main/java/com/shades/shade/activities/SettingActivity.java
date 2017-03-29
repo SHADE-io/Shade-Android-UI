@@ -1,16 +1,20 @@
 package com.shades.shade.activities;
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.TimePicker;
 
 import com.shades.shade.R;
 import com.shades.shade.dialogs.DialogButtonClickListener;
 import com.shades.shade.dialogs.SettingPairingDialog;
 import com.shades.shade.utility.AppConstant;
 import com.shades.shade.widgets.ShadeTextView;
+
+import java.util.Calendar;
 
 public class SettingActivity extends ShadeBaseActivity implements CompoundButton.OnCheckedChangeListener {
 
@@ -21,6 +25,9 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
     private SwitchCompat switchEveningReminder;
     private ImageView topBar_batteryStatus;
     private SettingPairingDialog settingPairingDialog;
+
+    private int mHour, mMinute;
+
 
     @Override
     protected void onUiLayout() {
@@ -87,7 +94,7 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
                 break;
             case R.id.settings_MorningReminder_switch:
                 AppConstant.showSnakeBarShortTIme(parent_layout, "Morning Reminder : " + (b ? "ON" : "OFF"));
-                if (b){
+                if (b) {
                     openTimePicker();
                 }
                 break;
@@ -131,7 +138,18 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
         });
     }
 
-    private void openTimePicker(){
+    private void openTimePicker() {
+        final Calendar c = Calendar.getInstance();
+        mHour = c.get(Calendar.HOUR_OF_DAY);
+        mMinute = c.get(Calendar.MINUTE);
 
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                AppConstant.showSnakeBarShortTIme(parent_layout, "Select Time: " + hourOfDay + ":" + minute);
+            }
+        }, mHour, mMinute, false);
+        timePickerDialog.show();
     }
 }
