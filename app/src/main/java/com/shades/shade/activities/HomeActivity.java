@@ -210,6 +210,7 @@ public class HomeActivity extends ShadeBaseActivity {
                 break;
 
             case SignOut:
+                onLogout();
                 break;
         }
         if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
@@ -291,6 +292,25 @@ public class HomeActivity extends ShadeBaseActivity {
     private void onExit() {
         dialog = new ShadeAlertDialog(context, getString(R.string.dialog_message_exit),
                 getString(R.string.dialog_pButton_Yes), getString(R.string.dialog_nButton_No), new DialogButtonClickListener() {
+            @Override
+            public void onPositiveButtonClick() {
+                dialog.dismissDialog();
+                overridePendingTransition(0, 0);
+                finish();
+            }
+
+            @Override
+            public void onNegativeButtonClick() {
+                dialog.dismissDialog();
+            }
+        });
+        dialog.prepareDialog();
+        dialog.showDialog();
+    }
+
+    private void onLogout() {
+        dialog = new ShadeAlertDialog(context, getString(R.string.dialog_message_exit),
+                getString(R.string.dialog_pButton_Yes), getString(R.string.dialog_logout), new DialogButtonClickListener() {
             @Override
             public void onPositiveButtonClick() {
                 dialog.dismissDialog();
