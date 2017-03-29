@@ -74,6 +74,16 @@ public class AllDataActivity extends ShadeBaseActivity {
     protected void onInitDataLoad() {
         mDataExpAdapter = new AllDataExpAdapter(context, new ArrayList<AllDataSet>());
         expListView.setAdapter(mDataExpAdapter);
+        expListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            int previousGroup = -1;
+
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                if(groupPosition != previousGroup)
+                    expListView.collapseGroup(previousGroup);
+                previousGroup = groupPosition;
+            }
+        });
 
         loadApiData();
     }
