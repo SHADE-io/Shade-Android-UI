@@ -49,7 +49,7 @@ public class FragmentCheckIn extends Fragment implements EditTextWatcherListener
 
     @Override
     public void onTextChangesToZero(View v) {
-
+        hideContextMenu();
     }
 
     private void setupView(View v) {
