@@ -2,6 +2,7 @@ package com.shades.shade.activities;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -13,6 +14,7 @@ import com.shades.shade.dialogs.DialogButtonClickListener;
 import com.shades.shade.dialogs.SettingPairingDialog;
 import com.shades.shade.utility.AppConstant;
 import com.shades.shade.widgets.ShadeTextView;
+import com.shades.shade.widgets.ShadeTimePickerDialog;
 
 import java.util.Calendar;
 
@@ -143,13 +145,28 @@ public class SettingActivity extends ShadeBaseActivity implements CompoundButton
         mHour = c.get(Calendar.HOUR_OF_DAY);
         mMinute = c.get(Calendar.MINUTE);
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+        ShadeTimePickerDialog timePickerDialog = new ShadeTimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
 
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 AppConstant.showSnakeBarShortTIme(parent_layout, "Select Time: " + hourOfDay + ":" + minute);
+
             }
         }, mHour, mMinute, false);
+        timePickerDialog.setTitle("Set Time");
+//        timePickerDialog.setButton(DialogInterface.BUTTON_POSITIVE, "SET", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int which) {
+//                if (which == DialogInterface.BUTTON_POSITIVE) {
+//                }
+//            }
+//        });
+//        timePickerDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "CANCEL", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int which) {
+//                if (which == DialogInterface.BUTTON_NEGATIVE) {
+//
+//                }
+//            }
+//        });
         timePickerDialog.show();
     }
 }
