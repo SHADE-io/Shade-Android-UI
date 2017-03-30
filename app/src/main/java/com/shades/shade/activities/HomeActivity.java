@@ -33,6 +33,7 @@ import com.shades.shade.fragments.FragmentCheckIn;
 import com.shades.shade.fragments.FragmentDashboard;
 import com.shades.shade.fragments.FragmentHistory;
 import com.shades.shade.model.DrawerItem;
+import com.shades.shade.model.UserDetail;
 import com.shades.shade.utility.AppConstant;
 import com.shades.shade.widgets.PagerSlidingTabStrip;
 import com.shades.shade.widgets.ShadeTextView;
@@ -313,7 +314,9 @@ public class HomeActivity extends ShadeBaseActivity {
                 getString(R.string.dialog_pButton_Yes), getString(R.string.dialog_nButton_No), new DialogButtonClickListener() {
             @Override
             public void onPositiveButtonClick() {
+                UserDetail.logoutUser(context);
                 dialog.dismissDialog();
+                startActivity(new Intent(context,SplashActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
             }
