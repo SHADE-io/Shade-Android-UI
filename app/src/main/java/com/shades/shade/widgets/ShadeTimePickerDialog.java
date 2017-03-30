@@ -8,7 +8,11 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
@@ -100,6 +104,13 @@ public class ShadeTimePickerDialog  extends TimePickerDialog {
                 nBtn.setTextColor(getContext().getResources().getColor(R.color.colorAccent));
                 nBtn.setText("CANCEL");
                 nBtn.setTypeface(typefaceM, Typeface.NORMAL);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            try {
+                colorizeDatePicker(mTimePicker);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -108,4 +119,42 @@ public class ShadeTimePickerDialog  extends TimePickerDialog {
             e.printStackTrace();
         }
     }
+
+    public static void colorizeDatePicker(TimePicker datePicker) {
+        try {
+            Resources system = Resources.getSystem();
+            int dayId = system.getIdentifier("hour", "id", "android");
+            int monthId = system.getIdentifier("minute", "id", "android");
+            int yearId = system.getIdentifier("amPm", "id", "android");
+
+            NumberPicker dayPicker = (NumberPicker) datePicker.findViewById(dayId);
+            NumberPicker monthPicker = (NumberPicker) datePicker.findViewById(monthId);
+            NumberPicker yearPicker = (NumberPicker) datePicker.findViewById(yearId);
+
+            setDividerColor(dayPicker);
+            setDividerColor(monthPicker);
+            setDividerColor(yearPicker);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void setDividerColor(NumberPicker picker) {
+        if (picker == null)
+            return;
+
+        final int count = picker.getChildCount();
+        for (int i = 0; i < count; i++) {
+            try {
+                Field dividerField = picker.getClass().getDeclaredField("mSelectionDivider");
+                dividerField.setAccessible(true);
+                ColorDrawable colorDrawable = new ColorDrawable(picker.getResources().getColor(R.color.colorAccent));
+                dividerField.set(picker, colorDrawable);
+                picker.invalidate();
+            } catch (Exception e) {
+                Log.w("setDividerColor", e);
+            }
+        }
+    }
+
 }
