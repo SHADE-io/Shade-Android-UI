@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.shades.shade.R;
-import com.shades.shade.dialogs.ShadeProgressDialog;
+import com.shades.shade.model.UserDetail;
 import com.shades.shade.networkcall.LoginTask;
 import com.shades.shade.utility.Constant;
 import com.shades.shade.utility.RegisterActivities;
@@ -177,7 +177,9 @@ public class SignInActivity extends ShadeBaseActivity {
         LoginTask loginTask = new LoginTask(context);
         loginTask.setLoginTaskListener(new LoginTask.LoginTaskListener() {
             @Override
-            public void onSuccess() {
+            public void onSuccess(UserDetail detail) {
+
+                detail.saveUser(context);
                 goToSignIn();
             }
 

@@ -2,9 +2,11 @@ package com.shades.shade.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.shades.shade.R;
+import com.shades.shade.model.UserDetail;
 import com.shades.shade.utility.RegisterActivities;
 import com.shades.shade.widgets.ShadeTextView;
 
@@ -49,6 +51,10 @@ public class SplashActivity extends ShadeBaseActivity {
     @Override
     protected void onInitDataLoad() {
         //TODO After UI Load complete, if you want to do something, do it here
+        UserDetail detail =   UserDetail.getLoggedInUser(context);
+        if (detail!=null && !TextUtils.isEmpty(detail.getUserId())){
+            gotToHome();
+        }
     }
 
     @Override
@@ -76,5 +82,11 @@ public class SplashActivity extends ShadeBaseActivity {
     private void goToSignUp() {
         startActivity(new Intent(context, SignUpActivity.class));
         overridePendingTransition(0, 0);
+    }
+
+    private void gotToHome(){
+            startActivity(new Intent(context, HomeActivity.class));
+            overridePendingTransition(0, 0);
+            RegisterActivities.removeAllActivities();
     }
 }

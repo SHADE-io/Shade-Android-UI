@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 
 import com.shades.shade.dialogs.ShadeProgressDialog;
+import com.shades.shade.model.UserDetail;
 
 import java.util.HashMap;
 import java.util.List;
@@ -34,6 +35,7 @@ public class LoginTask {
 
         private ShadeProgressDialog pgDialog;
         private boolean isAPICallSuccess = false;
+        private UserDetail detail;
 
         @Override
         protected void onPreExecute() {
@@ -49,6 +51,10 @@ public class LoginTask {
                 //THIS FOR TEST ONLY
                 //TODO WITH *** postBody
                 Thread.sleep(3000);
+
+                detail = new UserDetail();
+                detail.setUserId("dibakar@shade.io");
+
                 isAPICallSuccess = true;
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -65,7 +71,7 @@ public class LoginTask {
 
             if (loginTaskListener != null) {
                 if (isAPICallSuccess) {
-                    loginTaskListener.onSuccess();
+                    loginTaskListener.onSuccess(detail);
                 } else {
                     loginTaskListener.onFail();
                 }
@@ -91,7 +97,7 @@ public class LoginTask {
     }
 
     public interface LoginTaskListener {
-        void onSuccess();
+        void onSuccess(UserDetail detail);
 
         void onFail();
     }
