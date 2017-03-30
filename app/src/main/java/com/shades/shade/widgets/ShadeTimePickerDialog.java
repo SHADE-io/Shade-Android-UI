@@ -7,8 +7,15 @@ import java.util.List;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import android.view.View;
+import android.widget.Button;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.shades.shade.R;
 
 public class ShadeTimePickerDialog  extends TimePickerDialog {
 
@@ -62,6 +69,41 @@ public class ShadeTimePickerDialog  extends TimePickerDialog {
                 displayedValues.add(String.format("%02d", i));
             }
             minuteSpinner.setDisplayedValues(displayedValues.toArray(new String[displayedValues.size()]));
+
+            try {
+                Typeface typeface = Typeface.createFromAsset(getContext().getAssets(),"fonts/Roboto-Regular.ttf");
+                Typeface typefaceM = Typeface.createFromAsset(getContext().getAssets(),"fonts/Roboto-Medium.ttf");
+
+                int dividerId = getContext().getResources().getIdentifier
+                        ("android:id/titleDivider", null, null);
+                View divider = findViewById(dividerId);
+                divider.setBackgroundColor(getContext().getResources().getColor(R.color.colorAccent));
+
+                int textViewId = getContext().getResources().getIdentifier
+                        ("android:id/alertTitle", null, null);
+                TextView tv = (TextView) findViewById(textViewId);
+                tv.setTextColor(getContext().getResources().getColor(R.color.colorAccent));
+                tv.setText("Set time");
+                tv.setTypeface(typeface, Typeface.NORMAL);
+
+                int pButtonId = getContext().getResources().getIdentifier
+                        ("android:id/button1", null, null);
+                Button pBtn = (Button) findViewById(pButtonId);
+                pBtn.setTextColor(getContext().getResources().getColor(R.color.colorAccent));
+                pBtn.setText("SET");
+                pBtn.setTypeface(typefaceM, Typeface.NORMAL);
+
+
+                int nButtonId = getContext().getResources().getIdentifier
+                        ("android:id/button2", null, null);
+                Button nBtn = (Button) findViewById(nButtonId);
+                nBtn.setTextColor(getContext().getResources().getColor(R.color.colorAccent));
+                nBtn.setText("CANCEL");
+                nBtn.setTypeface(typefaceM, Typeface.NORMAL);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
