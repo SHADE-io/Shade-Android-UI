@@ -6,29 +6,9 @@
     android:background="@color/md_white_1000">
 
 
-    <LinearLayout
-        android:id="@+id/layout_x"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/black" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_forty"
-            android:background="@android:color/black" />
-    </LinearLayout>
-
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/layout_x"
-        android:layout_alignTop="@+id/layout_x"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/md_white_1000">
 
 
@@ -38,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:padding="@dimen/dp_ten"
+            android:padding="@dimen/dp_twelve"
             android:scaleType="centerInside"
             android:src="@drawable/ic_cross" />
 
@@ -49,7 +29,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_fifteen"
             android:layout_toRightOf="@+id/topBar_btn_cross"
-            android:text="Check In"
+            android:text="CHECK IN"
             android:textColor="@color/textColor_signin_tiitle"
             android:textSize="@dimen/sp_mediumxx"
             shade:customFont="@string/roboto_medium" />

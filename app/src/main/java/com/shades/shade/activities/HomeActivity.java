@@ -335,6 +335,7 @@ public class HomeActivity extends ShadeBaseActivity {
             if (layoutMain.getChildCount() == 2) {
                 layoutMain.removeViewAt(1);
             }
+            tabs.setVisibility(View.VISIBLE);
             return;
         }
 
@@ -364,6 +365,6 @@ public class HomeActivity extends ShadeBaseActivity {
             }
         });
         layoutMain.addView(topBarCheckIn);
-
+        tabs.setVisibility(View.GONE);
     }
 }
