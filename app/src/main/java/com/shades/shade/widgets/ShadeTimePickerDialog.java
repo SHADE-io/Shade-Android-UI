@@ -23,7 +23,7 @@ import com.shades.shade.R;
 
 public class ShadeTimePickerDialog  extends TimePickerDialog {
 
-    private final static int TIME_PICKER_INTERVAL = 5;
+    private final static int TIME_PICKER_INTERVAL = 30;
     private TimePicker mTimePicker;
     private final OnTimeSetListener mTimeSetListener;
 
@@ -67,9 +67,9 @@ public class ShadeTimePickerDialog  extends TimePickerDialog {
             NumberPicker minuteSpinner = (NumberPicker) mTimePicker
                     .findViewById(field.getInt(null));
             minuteSpinner.setMinValue(0);
-            minuteSpinner.setMaxValue((35 / TIME_PICKER_INTERVAL) - 1);
+            minuteSpinner.setMaxValue((60 / TIME_PICKER_INTERVAL) - 1);
             List<String> displayedValues = new ArrayList<>();
-            for (int i = 0; i < 35; i += TIME_PICKER_INTERVAL) {
+            for (int i = 0; i < 60; i += TIME_PICKER_INTERVAL) {
                 displayedValues.add(String.format("%02d", i));
             }
             minuteSpinner.setDisplayedValues(displayedValues.toArray(new String[displayedValues.size()]));
