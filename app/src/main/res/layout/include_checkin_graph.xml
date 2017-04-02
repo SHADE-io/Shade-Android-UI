@@ -8,6 +8,6 @@
 
     <com.shades.shade.widgets.CheckInGraphView
         android:layout_width="match_parent"
-        android:background="@color/md_purple_50"
-        android:layout_height="300dp" />
+        android:background="@color/md_white_1000"
+        android:layout_height="200dp" />
 </LinearLayout>

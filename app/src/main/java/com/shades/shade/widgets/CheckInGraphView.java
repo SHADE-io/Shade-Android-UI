@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.shades.shade.R;
+import com.shades.shade.model.CheckInDataSet;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,8 @@ public class CheckInGraphView extends View {
     private int noOfDataCl = 12;
     private int ringRd = 18;
     private int ringStrokeWd = 8;
+
+    private ArrayList<CheckInDataSet> listOfData = null;
 
     public CheckInGraphView(Context context) {
         super(context);
@@ -60,37 +63,49 @@ public class CheckInGraphView extends View {
         Bitmap minIcon = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.emojiscale_min);
         canvas.drawBitmap(maxIcon, R_X - minIcon.getWidth() / 2, B_Y + lineWidth - (minIcon.getHeight() / 2), paint);
 
+        //Test Only
+//        listOfData = createDate();
+
         //Draw date wise point
-        ArrayList<CheckInDataSet> listOfData = createDate();
-        int lineGpX = (W - padding * 2) / noOfDataCl;
-        for (int j = 0; j < listOfData.size(); j++) {
-            CheckInDataSet dataSet = listOfData.get(j);
-            if (j != 0) {
-                Paint paintConnectedLine = new Paint();
-                paintConnectedLine.setStyle(Paint.Style.STROKE);
-                paintConnectedLine.setStrokeWidth(ringStrokeWd);
-                paintConnectedLine.setColor(Color.parseColor("#A07DE6"));
-                canvas.drawLine(L_X + (lineGpX * (j - 1)), B_Y - (lineGpY * (listOfData.get(j - 1).getSmileyState() - 1)),
-                        L_X + (lineGpX * j), B_Y - (lineGpY * (dataSet.getSmileyState() - 1)), paintConnectedLine);
+        if (listOfData != null && listOfData.size() >= 1) {
+            int lineGpX = (W - padding * 2) / noOfDataCl;
+
+            //Draw Line from point to point
+            for (int j = 0; j < listOfData.size(); j++) {
+                CheckInDataSet dataSet = listOfData.get(j);
+                if (j != 0) {
+                    Paint paintConnectedLine = new Paint();
+                    paintConnectedLine.setStyle(Paint.Style.STROKE);
+                    paintConnectedLine.setStrokeWidth(ringStrokeWd);
+                    paintConnectedLine.setColor(Color.parseColor("#A07DE6"));
+                    canvas.drawLine(L_X + (lineGpX * (j - 1)), B_Y - (lineGpY * (listOfData.get(j - 1).getSmileyState() - 1)),
+                            L_X + (lineGpX * j), B_Y - (lineGpY * (dataSet.getSmileyState() - 1)), paintConnectedLine);
+                }
+            }
+
+            //Draw Circle Point
+            for (int j = 0; j < listOfData.size(); j++) {
+                CheckInDataSet dataSet = listOfData.get(j);
+                Paint paintRing = new Paint();
+                paintRing.setStyle(Paint.Style.STROKE);
+                paintRing.setStrokeWidth(ringStrokeWd);
+                paintRing.setColor(Color.parseColor("#A07DE6"));
+
+                Paint paintRingSL = new Paint();
+                paintRingSL.setColor(Color.WHITE);
+                canvas.drawCircle(L_X + (lineGpX * j), B_Y - (lineGpY * (dataSet.getSmileyState() - 1)) + lineWidth, ringRd, paintRingSL);
+                canvas.drawCircle(L_X + (lineGpX * j), B_Y - (lineGpY * (dataSet.getSmileyState() - 1)) + lineWidth, ringRd, paintRing);
             }
         }
 
-        for (int j = 0; j < listOfData.size(); j++) {
-            CheckInDataSet dataSet = listOfData.get(j);
-            Paint paintRing = new Paint();
-            paintRing.setStyle(Paint.Style.STROKE);
-            paintRing.setStrokeWidth(ringStrokeWd);
-            paintRing.setColor(Color.parseColor("#A07DE6"));
-
-            Paint paintRingSL = new Paint();
-            paintRingSL.setColor(Color.WHITE);
-            canvas.drawCircle(L_X + (lineGpX * j), B_Y - (lineGpY * (dataSet.getSmileyState() - 1)) + lineWidth, ringRd, paintRingSL);
-            canvas.drawCircle(L_X + (lineGpX * j), B_Y - (lineGpY * (dataSet.getSmileyState() - 1)) + lineWidth, ringRd, paintRing);
-        }
     }
 
+    public void setDataSet(ArrayList<CheckInDataSet> listOfData) {
+        this.listOfData = listOfData;
+        invalidate();
+    }
 
-    private ArrayList<CheckInDataSet> createDate() {
+    public static ArrayList<CheckInDataSet> createDate() {
         ArrayList<CheckInDataSet> listOfData = new ArrayList<>();
         listOfData.add(new CheckInDataSet(1, "02-04-2017"));
         listOfData.add(new CheckInDataSet(2, "02-04-2017"));
@@ -102,31 +117,5 @@ public class CheckInGraphView extends View {
         listOfData.add(new CheckInDataSet(2, "02-04-2017"));
         listOfData.add(new CheckInDataSet(4, "02-04-2017"));
         return listOfData;
-    }
-
-    private class CheckInDataSet {
-        private int smileyState;
-        private String date;
-
-        public CheckInDataSet(int smileyState, String date) {
-            this.smileyState = smileyState;
-            this.date = date;
-        }
-
-        public int getSmileyState() {
-            return smileyState;
-        }
-
-        public void setSmileyState(int smileyState) {
-            this.smileyState = smileyState;
-        }
-
-        public String getDate() {
-            return date;
-        }
-
-        public void setDate(String date) {
-            this.date = date;
-        }
     }
 }

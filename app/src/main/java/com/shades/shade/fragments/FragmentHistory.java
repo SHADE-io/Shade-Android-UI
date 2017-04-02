@@ -4,6 +4,7 @@ package com.shades.shade.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,11 @@ import com.shades.shade.R;
 import com.shades.shade.activities.AllDataActivity;
 import com.shades.shade.activities.ChangePasswordActivity;
 import com.shades.shade.dialogs.UVExposureDialog;
+import com.shades.shade.model.CheckInDataSet;
+import com.shades.shade.widgets.CheckInGraphView;
 import com.shades.shade.widgets.ShadeTextView;
+
+import java.util.ArrayList;
 
 
 public class FragmentHistory extends Fragment implements View.OnClickListener {
@@ -29,6 +34,8 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
     private ShadeTextView txt_YHighUV;
     private ImageView img_AvgCheckIn;
     private UVExposureDialog uvExposureDialog = null;
+
+    private CheckInGraphView checkInGraphLayout;
 
     public static FragmentHistory newInstance(int position, Context mContext) {
         FragmentHistory f = new FragmentHistory();
@@ -55,6 +62,8 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
         txt_YHighUV = (ShadeTextView) v.findViewById(R.id.frg_history_txt_YHighUV);
         img_AvgCheckIn = (ImageView) v.findViewById(R.id.frg_history_img_AvgCheckIn);
 
+        checkInGraphLayout = (CheckInGraphView) v.findViewById(R.id.checkInGraphLayout);
+
 
         dailyLimit.setText("Daily Limit: 25 UV Units");
         txt_TotalDays.setText("1 Day");
@@ -62,6 +71,8 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
         txt_YDailyLimit.setText("—");
         txt_YHighUV.setText("—");
         img_AvgCheckIn.setImageResource(R.drawable.alldata_emoji_1);
+
+        setCheckInData();
 
     }
 
@@ -98,5 +109,16 @@ public class FragmentHistory extends Fragment implements View.OnClickListener {
         });
         uvExposureDialog.prepareDialog();
         uvExposureDialog.showDialog();
+    }
+
+    private void setCheckInData() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Test Only
+                ArrayList<CheckInDataSet> listOfData = CheckInGraphView.createDate();
+                checkInGraphLayout.setDataSet(listOfData);
+            }
+        }, 3000);
     }
 }

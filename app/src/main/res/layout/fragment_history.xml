@@ -92,12 +92,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_ten"
                 android:background="@color/md_white_1000"
-                android:orientation="vertical"
-                android:padding="@dimen/dp_twelve">
+                android:orientation="vertical">
 
                 <com.shades.shade.widgets.ShadeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_twelve"
+                    android:paddingRight="@dimen/dp_twelve"
+                    android:paddingTop="@dimen/dp_twelve"
                     android:singleLine="true"
                     android:text="@string/frag_history_CheckIn"
                     android:textColor="@color/textColor"
@@ -107,9 +109,16 @@
                 <LinearLayout
                     android:id="@+id/frg_history_checkInGraphLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="@dimen/dp_five"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical">
+
+                    <com.shades.shade.widgets.CheckInGraphView
+                        android:id="@+id/checkInGraphLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/md_white_1000" />
+                </LinearLayout>
             </LinearLayout>
 
             <RelativeLayout
