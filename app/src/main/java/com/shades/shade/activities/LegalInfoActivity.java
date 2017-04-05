@@ -3,6 +3,7 @@ package com.shades.shade.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -126,9 +127,13 @@ public class LegalInfoActivity extends ShadeBaseActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(links[position]));
-                    startActivity(i);
+                    Intent webIntent = new Intent(context, WebActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("key_title", infoList[position]);
+                    bundle.putString("key_link", links[position]);
+                    webIntent.putExtras(bundle);
+                    startActivity(webIntent);
+                    overridePendingTransition(0, 0);
                 }
             });
             return view;
